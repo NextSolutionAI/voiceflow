@@ -38,7 +38,6 @@
     background: none !important;
 }
 
-/* Chat Header */
 .vfrc-header {
     background: none !important;
     border-bottom: 1px dashed #75757561 !important;
@@ -65,7 +64,6 @@
     border: 1px solid rgba(255, 255, 255, 0.24) !important;
 }
 
-/* System Buttons Wrapper */
 .vfrc-system-response--actions {
     display: block !important;
 }
