@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap');
+
 .vfrc-widget>.vfrc-widget--launcher,
 .vfrc-widget>.vfrc-widget--chat {
     position: inherit !important;
@@ -91,7 +93,7 @@
 }
 
 .vfrc-chat-input textarea, .vfrc-chat-input--button {
-  background-color: #1d3b53 !important; 
+  background-color: #EBE6FF !important; 
   color: #ffffff !important; 
 }
 
