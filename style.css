@@ -42,6 +42,13 @@
     display: none !important;
 }
 
+.vfrc-message,
+.vfrc-proactive-message {
+    color: rgb(0, 0, 0) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgb(0, 0, 0) !important;
+}
+
 .vfrc-message {
     backdrop-filter: blur(16px) saturate(179%) !important;
     background-color: rgb(242, 242, 242) !important;
@@ -51,9 +58,6 @@
 .vfrc-proactive-message {
     backdrop-filter: blur(38px) saturate(179%) !important;
     background-color: rgb(255, 255, 255) !important;
-    color: rgb(0, 0, 0) !important;
-    border-radius: 12px !important;
-    border: 1px solid rgb(255, 255, 255) !important;
 }
 
 .vfrc-system-response--actions {
@@ -116,7 +120,7 @@
 }
 
 .vfrc-chat--dialog {
-    background-color: #ebe6ff !important; /* Fundo branco */
+    background-color: #ffffff !important; /* Fundo branco */
     color: #000000 !important; /* Cor do texto preto */
 }
 
