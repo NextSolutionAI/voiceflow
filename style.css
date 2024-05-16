@@ -62,7 +62,6 @@
     background-color: rgba(25, 25, 25, 0.58) !important;
 }
 
-/* Exibindo botões secundários nas respostas do sistema */
 .vfrc-system-response--actions {
     display: block !important;
 }
