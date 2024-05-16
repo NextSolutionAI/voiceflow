@@ -13,7 +13,7 @@
 .vfrc-widget--chat {
   width: 400px !important;
   max-height: 704px !important;
-  box-shadow: 0px 2px 60px 0px rgba(245, 245, 245) !important;
+  box-shadow: 0px 5px 40px 0px rgb(85,37,241) !important;
   transition: border 0.25s ease-in, box-shadow 0.25s ease-in !important;
   backdrop-filter: blur(20px) saturate(120%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(120%) !important; /* Compatibilidade com navegadores Webkit */
@@ -139,11 +139,6 @@
     max-height: unset !important;
     inset: 0 !important;
   }
-
-  .vfrc-launcher {
-    width: 80px !important;
-  }
-}
 
 @media (max-width: 500px) {
   .vfrc-message {
