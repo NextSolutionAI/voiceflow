@@ -79,12 +79,10 @@
     border-color: #dce0e5 !important;
 }
 
-/* Estilizando prompt */
 .vfrc-prompt {
     background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Estilizando a barra de rolagem */
 ::-webkit-scrollbar {
     border-left: 1px solid rgba(0, 0, 0, 0) !important;
 }
