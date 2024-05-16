@@ -2,8 +2,7 @@
 
 .vfrc-widget > .vfrc-widget--launcher,
 .vfrc-widget > .vfrc-widget--chat {
-    position: inherit !important; /* Mantém a posição herdada */
-}
+    position: inherit !important; 
 
 .vfrc-launcher {
     border-radius: 10px !important;
