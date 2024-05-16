@@ -6,6 +6,7 @@
 }
 
 .vfrc-launcher {
+    border-radius: 10px !important;
     border: 1px solid wheat !important;
     background-color: #5525f1 !important;
 }
