@@ -1,8 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-
-.vfrc-widget {
-  font-family: "DM Sans", sans-serif !important;
-  font-size: 16px !important;
+.vfrc-widget--chat {
+  font-family: 'Arial', sans-serif; /* Change to your desired font family */
 }
 
 .vfrc-widget > .vfrc-widget--launcher,
@@ -48,7 +45,7 @@
 }
 
 .vfrc-proactive-message {
-  border: 1px solid rgb(0, 0, 0) !important;
+  border: 1px solid rgb(85,37,241) !important;
   backdrop-filter: blur(38px) saturate(179%) !important;
   background-color: rgb(255, 255, 255) !important;
 }
@@ -66,13 +63,16 @@
 }
 
 .vfrc-button--secondary:hover {
-  border-color: #dce0e5 !important;
+  border-color: #000000 !important;
 }
 
 .vfrc-prompt,
 .vfrc-footer {
   background-color: rgb(255, 255, 255) !important;
   color: #5525f1 !important;
+  border-top: solid 1px !important;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
 }
 
 ::-webkit-scrollbar {
@@ -86,16 +86,11 @@
 }
 
 .vfrc-chat-input textarea, .vfrc-chat-input--button {
-  background-color: #1d3b53 !important;
+  background-color: #ffffff !important;
   color: #ffffff !important; 
   background-color: #ffffff !important;
   color: #000000 !important;
-  border-right-width: 0px !important;
-  border-top-right-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
-  border-left-width: 0px !important;
-  border-top-left-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
+  border: none !important
 }
 
 .vfrc-bubble {
