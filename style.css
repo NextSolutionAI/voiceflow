@@ -1,5 +1,5 @@
 .vfrc-widget--chat {
-  font-family: 'Arial', sans-serif; /* Change to your desired font family */
+  font-family: "Arial", sans-serif; /* Change to your desired font family */
 }
 
 .vfrc-widget > .vfrc-widget--launcher,
@@ -16,6 +16,8 @@
   -webkit-backdrop-filter: blur(20px) saturate(120%) !important; /* Compatibility with Webkit browsers */
   border-radius: 10px !important;
   border: 1px solid rgba(117, 117, 117, 0.38) !important;
+  position: fixed;
+  z-index: 1 !important;
 }
 
 .vfrc-chat {
@@ -45,7 +47,7 @@
 }
 
 .vfrc-proactive-message {
-  border: 1px solid rgb(85,37,241) !important;
+  border: 1px solid rgb(85, 37, 241) !important;
   backdrop-filter: blur(38px) saturate(179%) !important;
   background-color: rgb(255, 255, 255) !important;
 }
@@ -85,12 +87,13 @@
   border: 1px solid rgba(255, 255, 255, 0.24) !important;
 }
 
-.vfrc-chat-input textarea, .vfrc-chat-input--button {
+.vfrc-chat-input textarea,
+.vfrc-chat-input--button {
   background-color: #ffffff !important;
-  color: #ffffff !important; 
+  color: #ffffff !important;
   background-color: #ffffff !important;
   color: #000000 !important;
-  border: none !important
+  border: none !important;
 }
 
 .vfrc-bubble {
@@ -111,6 +114,16 @@
 
 .vfrc-chat--session-time {
   display: none !important;
+}
+
+.vfrc-message--chat {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.vfrc-input--chat {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 
 @media (max-width: 768px) {
