@@ -1,1 +1,78 @@
+            .vg-proactive-notification--container {
+                display: none !important;
+            }
 
+            .vg-feedback-btns-container {
+                display: none !important;
+            }
+
+            .vg-header-container {
+                background-color: hsl(var(--nextui-primary)) !important;
+                border-radius: 0px !important;
+            }
+
+            #VG_OVERLAY_CONTAINER iframe {
+                width: 100% !important;
+                height: 93vh !important;
+                overflow-y: auto !important;
+                border: none !important;
+            }
+
+            #VG_OVERLAY_CONTAINER {
+                direction: ltr !important;
+            }
+
+            .vg-open-btn {
+                width: 70px !important;
+                height: 70px !important;
+                transition: transform 167ms cubic-bezier(0.33, 0.00, 0.00, 1.00) !important;
+                box-sizing: content-box !important;
+            }
+
+            .vg-open-btn:hover {
+                transform: scale(1.1) !important;
+            }
+
+            .vg-container-snap-chat {
+                scrollbar-color: #ddd transparent !important;
+                scrollbar-width: thin !important;
+            }
+
+            .vg-overlay-root-container {
+                box-shadow: 0px 5px 40px #5f2eff !important;
+            }
+
+            .vg-footer-mother-container,
+            .vg-footer-inner-container {
+                background-color: rgb(255,255,255) !important;
+            }
+
+            .vg-bg-gradient-to-b {
+                background-image: none !important;
+            }
+
+            .vg-widget-controls-container {
+                bottom: 15px !important;
+                right: 15px !important;
+            }
+
+            .vg-proactive-btn--close {
+                bottom: 130px !important;
+                right: 15px !important;
+            }
+
+            .vg-proactive-message--container {
+                bottom: 90px !important;
+                right: 15px !important;
+            }
+
+            .vg-chat-end {
+                display: none !important;
+            }
+
+            @media screen and (min-width: 768px) {
+                .vg-overlay-root-container {
+                    max-height: 704px !important;
+                    width: 400px !important;
+                }
+            }
