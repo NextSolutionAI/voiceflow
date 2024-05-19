@@ -1,55 +1,79 @@
 .vfrc-widget--chat {
-  font-family: "Arial", sans-serif; 
-}
-
-.vfrc-widget > .vfrc-widget--launcher,
-.vfrc-widget > .vfrc-widget--chat {
-  position: inherit !important;
-}
-
-.vfrc-widget--chat {
   width: 400px !important;
   max-height: 704px !important;
-  box-shadow: 0px 5px 40px 0px rgb(85, 37, 241) !important;
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1) !important;
   transition: border 0.25s ease-in, box-shadow 0.25s ease-in !important;
-  backdrop-filter: blur(20px) saturate(120%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(120%) !important; 
-  border-radius: 10px !important;
-  border: 1px solid rgba(117, 117, 117, 0.38) !important;
-  position: fixed;
-  z-index: 1 !important;
+  border-radius: 20px !important;
+  border: 1px solid rgb(85,37,241) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  bottom: 70px !important;
 }
 
 .vfrc-chat {
   background-color: rgba(95, 95, 95, 0.07) !important;
 }
 
+.vfrc-chat-message {
+  color: #000000 !important;
+}
+
 .vfrc-assistant-info--title {
   display: none !important;
 }
 
+.vfrc-header--button {
+  border: 1px solid #5525f1 !important;
+}
+
+.vfrc.widget--launcher {
+  display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: absolute !important;
+    width: 48px !important;
+    height: 48px !important;
+    transition: transform 100ms linear, opacity 80ms linear !important;
+    transition-behavior: normal, normal !important;
+    transition-duration: 100ms, 80ms !important;
+    transition-timing-function: linear, linear !important;
+    transition-delay: 0s, 0s !important;
+    transition-property: transform, opacity !important;
+}
+
+.vfrc-message,
+.vfrc-chat-input textarea {
+  font-family: "Roboto", sans-serif !important;
+}
+
 .vf-chat,
 .vfrc-header {
-  background-color: #5525f1 !important;
+  background-color: #3000cc !important;
 }
 
 .vfrc-header {
-  border-bottom: 1px dashed rgba(117, 117, 117, 0.38) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 10px !important;
 }
 
 .vfrc-header .vfrc-avatar {
   display: none !important;
 }
 
-.vfrc-proactive-message {
-  color: rgb(0, 0, 0) !important;
-  border-radius: 12px !important;
+.vfrc-message {
+  font-family: "DM Sans" sans-serif !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 
 .vfrc-proactive-message {
-  border: 1px solid rgb(85, 37, 241) !important;
+  color: rgba(255, 255, 255, 0.81) !important;
   backdrop-filter: blur(38px) saturate(179%) !important;
-  background-color: rgb(255, 255, 255) !important;
+  background-color: #1919190a !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
 }
 
 .vfrc-system-response--actions {
@@ -57,15 +81,15 @@
 }
 
 .vfrc-button--secondary {
-  border: 1px solid #ffffff !important;
-  color: rgba(255, 255, 255, 0.88) !important;
-  background-color: #5525f1 !important;
+  border: 1px solid #b199ff !important;
+  color: rgba(0, 0, 0) !important;
   box-shadow: 0 1px 2px var(--shadows-shadow2) !important;
   transition: border-color 150ms ease 0s !important;
 }
 
 .vfrc-button--secondary:hover {
-  border-color: #000000 !important;
+  border-color: #4c00ff !important;
+  transition: background-color 150ms ease 0s !important;
 }
 
 .vfrc-prompt,
@@ -77,29 +101,53 @@
   border-top-right-radius: 0%;
 }
 
+.vfrc-scrollbar-container {
+  margin-left: 20px !important; 
+}
+
+.vfrc-scrollbar-container {
+  margin-left: 20px !important; 
+}
+
 ::-webkit-scrollbar {
-  border-left: 1px solid rgba(0, 0, 0, 0) !important;
+  width: 9px !important; 
+  margin-left: -10px !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(50, 65, 93, 0.54) !important;
-  border-radius: 3px !important;
-  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  background-color: #8B8B8B; 
+  border-radius: 10px; 
+  border: 2px solid transparent; 
+  width: 8px; 
+}
+
+::-webkit-scrollbar-button:single-button {
+  background-color: rgba(0, 0, 0, 0.2); 
+  display: block;
+  width: 20px !important; 
+  border-radius: 10px; 
+  border: 1px solid transparent; 
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="rgba(0,0,0,0.5)" d="M0 4l4-4 4 4H0z"/></svg>') no-repeat center center;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  background: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="rgba(0,0,0,0.5)" d="M0 0l4 4 4-4H0z"/></svg>') no-repeat center center;
 }
 
 .vfrc-chat-input textarea,
 .vfrc-chat-input--button {
-  background-color: #ffffff !important;
-  color: #ffffff !important;
   background-color: #ffffff !important;
   color: #000000 !important;
   border: none !important;
 }
 
 .vfrc-bubble {
-  color: rgba(255, 255, 255, 0.4) !important;
-  background-color: rgba(0, 0, 0, 0) !important;
-  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  color: rgb(0, 4, 255) !important;
+  background-color: rgb(98, 0, 255) !important;
+  border: 1px solid rgb(255, 255, 255) !important;
 }
 
 .vfrc-bubble:hover {
@@ -116,14 +164,9 @@
   display: none !important;
 }
 
-.vfrc-message--chat {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-}
-
-.vfrc-input--chat {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+.vfrc-system-response--list {
+  background-color: rgb(242, 242, 242) !important;
+  border-radius: 10px !important;
 }
 
 @media (max-width: 768px) {
