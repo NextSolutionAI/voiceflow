@@ -3,7 +3,6 @@
   max-height: 704px !important;
   box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1) !important;
   transition: border 0.25s ease-in, box-shadow 0.25s ease-in !important;
-  border-radius: 20px !important;
   border: 1px solid rgb(85,37,241) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,21 +24,6 @@
 
 .vfrc-header--button {
   border: 1px solid #5525f1 !important;
-}
-
-.vfrc.widget--launcher {
-  display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    position: absolute !important;
-    width: 48px !important;
-    height: 48px !important;
-    transition: transform 100ms linear, opacity 80ms linear !important;
-    transition-behavior: normal, normal !important;
-    transition-duration: 100ms, 80ms !important;
-    transition-timing-function: linear, linear !important;
-    transition-delay: 0s, 0s !important;
-    transition-property: transform, opacity !important;
 }
 
 .vfrc-message,
@@ -101,42 +85,6 @@
   border-top-right-radius: 0%;
 }
 
-.vfrc-scrollbar-container {
-  margin-left: 20px !important; 
-}
-
-.vfrc-scrollbar-container {
-  margin-left: 20px !important; 
-}
-
-::-webkit-scrollbar {
-  width: 9px !important; 
-  margin-left: -10px !important;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #8B8B8B; 
-  border-radius: 10px; 
-  border: 2px solid transparent; 
-  width: 8px; 
-}
-
-::-webkit-scrollbar-button:single-button {
-  background-color: rgba(0, 0, 0, 0.2); 
-  display: block;
-  width: 20px !important; 
-  border-radius: 10px; 
-  border: 1px solid transparent; 
-}
-
-::-webkit-scrollbar-button:single-button:vertical:decrement {
-  background: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="rgba(0,0,0,0.5)" d="M0 4l4-4 4 4H0z"/></svg>') no-repeat center center;
-}
-
-::-webkit-scrollbar-button:single-button:vertical:increment {
-  background: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="rgba(0,0,0,0.5)" d="M0 0l4 4 4-4H0z"/></svg>') no-repeat center center;
-}
-
 .vfrc-chat-input textarea,
 .vfrc-chat-input--button {
   background-color: #ffffff !important;
@@ -167,6 +115,12 @@
 .vfrc-system-response--list {
   background-color: rgb(242, 242, 242) !important;
   border-radius: 10px !important;
+}
+
+@media (min-width: 768px) {
+  .vfrc-widget--chat {
+    border-radius: 20px !important;
+  }
 }
 
 @media (max-width: 768px) {
