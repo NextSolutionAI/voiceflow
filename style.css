@@ -26,6 +26,19 @@
   border: 1px solid #5525f1 !important;
 }
 
+.vfrc-header--title {
+  font-family: "Roboto", sans-serif !important;
+}
+
+.vfrc-chat--spacer {
+  display: none !important
+}
+
+.vfrc-assistant-info--description {
+  font-family: "Roboto", sans-serif !important;
+  font-size: 15px !important;
+}
+
 .vfrc-message,
 .vfrc-chat-input textarea {
   font-family: "Roboto", sans-serif !important;
@@ -43,6 +56,10 @@
 
 .vfrc-header .vfrc-avatar {
   display: none !important;
+}
+
+.vfrc-system-response--list {
+  background-color: #F2F2F2 !important;
 }
 
 .vfrc-message {
@@ -65,10 +82,16 @@
 }
 
 .vfrc-button--secondary {
+  border-radius: 10px !important;
   border: 1px solid #b199ff !important;
-  color: rgba(0, 0, 0) !important;
+  background-color: #ebe6ff !important;
+  color: #0c0033 !important;
   box-shadow: 0 1px 2px var(--shadows-shadow2) !important;
   transition: border-color 150ms ease 0s !important;
+  margin: 4px !important;
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
 }
 
 .vfrc-button--secondary:hover {
@@ -87,7 +110,7 @@
 
 .vfrc-chat-input textarea,
 .vfrc-chat-input--button {
-  background-color: #ffffff !important;
+  background-color: #FFFFFF !important;
   color: #000000 !important;
   border: none !important;
 }
@@ -104,16 +127,22 @@
 }
 
 .vfrc-chat--dialog {
-  background-color: #ffffff !important;
+  background-color: #FFFFFF !important;
   color: #000000 !important;
 }
+
+.c-PJLV-jueArD-from-system {
+  background-color: #F2F2F2;
+  padding: 12px !important;
+}
+
 
 .vfrc-chat--session-time {
   display: none !important;
 }
 
 .vfrc-system-response--list {
-  background-color: rgb(242, 242, 242) !important;
+  background-color: #F2F2F2 !important;
   border-radius: 10px !important;
 }
 
@@ -136,7 +165,7 @@
     max-width: 350px !important;
   }
 
-  .vfrc-avatar {
+  .c-kIbiaN-iiTsXc-size-small {
     display: none !important;
   }
 
