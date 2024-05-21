@@ -151,10 +151,6 @@
   transform: scale(1.05);
 }
 
-.vfrc-footer {
-  height: 30px !important;
-}
-
 .vfrc-prompt,
 .vfrc-footer {
   background-color: #ffffff !important;
