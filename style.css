@@ -1,10 +1,59 @@
 .vfrc-widget--chat {
-  box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2) !important;
   transition: border 0.25s ease-in, box-shadow 0.25s ease-in !important;
-  border: 1px solid rgb(85, 37, 241) !important;
+  border-radius: 20px !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+.c-kIbiaN-iiTsXc-size-small {
+  width: 35px;
+  height: 35px;
+  background-image: url(https://www.nextsolutionai.com/wp-content/uploads/2024/05/ezgif.com-rotate-1.gif);
+}
+
+.vfrc-header {
+  background: linear-gradient(
+    135deg,
+    #5525f1,
+    #7248f4,
+    #8f6cf7,
+    #ab90fa #c7b3fd,
+    #e3d7ff
+  ) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 10px !important;
+}
+
+.c-bQoszf > img {
+  display: none
+}
+
+.vfrc-launcher { 
+  width: 70px;
+  height: 70px;
+  border: none;
+  animation: fadeIn 0.5s ease-in-out;
+  transition: transform 150ms ease 0s !important;
+  background-image: url("https://www.nextsolutionai.com/wp-content/uploads/2024/05/ezgif.com-animated-gif-maker-1.gif") !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.vfrc-launcher:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .vfrc-chat {
@@ -13,6 +62,8 @@
 
 .vfrc-chat-message {
   color: #000000 !important;
+  margin-bottom: 15px !important;
+  border-radius: 10px !important;
 }
 
 .vfrc-assistant-info--title {
@@ -41,26 +92,22 @@
   font-family: "Roboto", sans-serif !important;
 }
 
-.vf-chat,
-.vfrc-header {
+.vf-chat {
   background-color: #3000cc !important;
-}
-
-.vfrc-header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  border-top: 10px !important;
 }
 
 .vfrc-header .vfrc-avatar {
   display: none !important;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2) !important;
 }
 
 .vfrc-system-response--list {
   background-color: #f2f2f2 !important;
+  border-radius: 10px !important;
 }
 
 .vfrc-message {
-  font-family: "DM Sans" sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
@@ -84,22 +131,24 @@
   background-color: #ebe6ff !important;
   color: #0c0033 !important;
   box-shadow: 0 1px 2px var(--shadows-shadow2) !important;
-  transition: border-color 150ms ease 0s !important;
+  transition: border-color 150ms ease 0s, transform 150ms ease 0s !important;
   margin: 4px !important;
-  font-family: "DM Sans", sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
   font-size: 13px !important;
   font-weight: 700 !important;
 }
 
 .vfrc-button--secondary:hover {
   border-color: #4c00ff !important;
-  transition: background-color 150ms ease 0s !important;
+  background-color: #e0d7ff !important;
+  transition: background-color 150ms ease 0s, transform 150ms ease 0s !important;
+  transform: scale(1.05);
 }
 
 .vfrc-prompt,
 .vfrc-footer {
   background-color: rgb(255, 255, 255) !important;
-  color: #5525f1 !important;
+  color: #ebebeb !important;
   border-top: solid 1px !important;
   border-top-left-radius: 0%;
   border-top-right-radius: 0%;
@@ -142,21 +191,30 @@
   border-radius: 10px !important;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1080px) {
   .vfrc-widget--chat {
     border-radius: 20px !important;
     width: 400px !important;
     height: 704px !important;
     bottom: 70px !important;
   }
-}  
 
+  .vfrc-button--secondary {
+    margin-left: 10px !important;
+  }
+}
 
 @media (max-width: 768px) {
   .vfrc-widget--chat {
-    width: unset !important;
-    max-height: unset !important;
-    inset: 0 !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    height: 100% !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
   }
 }
 
@@ -171,5 +229,23 @@
 
   .vfrc-system-response--actions {
     padding-left: 20px !important;
+  }
+}
+
+.vfrc-loading {
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #5525f1;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
