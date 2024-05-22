@@ -15,8 +15,7 @@
 }
 
 .vfrc-header {
-  background: linear-gradient(
-    135deg, #5525f1 ) !important;
+  background: linear-gradient(135deg, #5525f1) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   border-top: 10px !important;
 }
@@ -228,7 +227,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .vfrc-widget--chat {
     border-radius: 20px !important;
     width: 400px !important;
@@ -242,7 +241,6 @@
 }
 
 @media (max-width: 500px) {
-
   .c-kIbiaN-iiTsXc-size-small {
     display: none !important;
   }
