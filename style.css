@@ -207,6 +207,17 @@
   animation: spin 2s linear infinite;
 }
 
+.vfrc-chat-input--button {
+  width: 42px;
+}
+
+.vfrc-footer {
+  padding-bottom: 10px;
+}
+
+.vfrc-footer--watermark {
+  display: none !important;
+}
 
 @keyframes spin {
   0% {
