@@ -206,6 +206,15 @@
   animation: spin 2s linear infinite;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .vfrc-chat-input--button {
   width: 42px;
 }
@@ -218,23 +227,17 @@
   display: none !important;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
-
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .vfrc-widget--chat {
+    width: 400px !important;
+    height: 704px !important;
     border-radius: 20px !important;
+    bottom: 60px !important;    
   }
   .vfrc-button--secondary {
     margin-left: 10px !important;
-  }       
+  }      
 }
 
 @media (min-width: 1024px) {
