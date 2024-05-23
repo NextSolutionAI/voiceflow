@@ -153,8 +153,7 @@
 .vfrc-prompt,
 .vfrc-footer {
   background-color: #ffffff !important;
-  color: #ebebeb !important;
-  border-top: solid 1px !important;
+  border-top: solid #ebebeb  1px !important;
   border-top-left-radius: 0%;
   border-top-right-radius: 0%;
 }
