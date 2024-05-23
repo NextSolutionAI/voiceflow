@@ -240,7 +240,7 @@
 @media (min-width: 1024px) {
   .vfrc-widget--chat {
     width: 400px !important;
-    max-height: 478.89px !important;
+    max-height: 664px !important;
     border-radius: 20px !important;
     bottom: 60px !important;
   }
@@ -252,7 +252,7 @@
 @media (min-width: 1280px) {
   .vfrc-widget--chat {
     width: 400px !important;
-    max-height: 678.89px !important;
+    max-height: 681px !important;
     border-radius: 20px !important;
     bottom: 60px !important;
   }
@@ -264,7 +264,7 @@
 @media (min-width: 1366px) {
   .vfrc-widget--chat {
     width: 400px !important;
-    max-height: 663.33px !important;
+    max-height: 664px !important;
     border-radius: 20px !important;
     bottom: 60px !important;    
   }
