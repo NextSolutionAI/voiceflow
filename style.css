@@ -185,6 +185,7 @@
 .c-PJLV-jueArD-from-system {
   background-color: #f2f2f2;
   padding: 12px !important;
+  border-radius: 20px !important;
 }
 
 .vfrc-chat--session-time {
@@ -193,7 +194,11 @@
 
 .vfrc-system-response--list {
   background-color: #f2f2f2 !important;
-  border-radius: 10px !important;
+  border-radius: 10px 10px 10px 10px !important;
+}
+
+.c-PJLV-gJqBfM-from-user {
+  border-radius: 10px 10px 10px 10px !important;
 }
 
 .vfrc-loading {
@@ -226,23 +231,272 @@
   display: none !important;
 }
 
-@media screen and (min-width: 768px) {
+/* Media Queries */
+@media (min-width: 1200px) {
   .vfrc-widget--chat {
-      max-height: 704px !important;
-      width: 400px !important;
-      border-radius: 30px !important;
+    max-height: 704px !important;
+    width: 400px !important;
+    border-radius: 30px !important;
   }
   .vfrc-button--secondary {
     margin-left: 10px !important;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .vfrc-widget--chat {
+    max-height: 704px !important;
+    width: 400px !important;
+    border-radius: 30px !important;
+  }
+  .vfrc-button--secondary {
+    margin-left: 10px !important;
+  }
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+  .vfrc-button--secondary {
+    margin-left: 10px !important;
+  }
+}
+
+@media (max-width: 767.98px) and (min-width: 576px) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
   .c-kIbiaN-iiTsXc-size-small {
     display: none !important;
   }
-
   .vfrc-system-response--actions {
-    padding-left: 20px !important;
+    padding-left: 17px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+  .c-kIbiaN-iiTsXc-size-small {
+    display: none !important;
+  }
+  .vfrc-system-response--actions {
+    padding-left: 17px !important;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+@media only screen and (min-device-width: 834px) and (max-device-width: 834px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+@media only screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* ----------- iPad Pro 12.9" ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+@media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
   }
 }
