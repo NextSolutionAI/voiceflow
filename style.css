@@ -243,6 +243,10 @@
   display: none !important;
 }
 
+.vfrc-carousel {
+  background-color: #FFFFFF;
+}
+
 /* Media Queries */
 @media (min-width: 1200px) {
   .vfrc-widget--chat {
