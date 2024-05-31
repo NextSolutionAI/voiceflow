@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+.vfrc-widget--chat,
+.vfrc-header--title,
+.vfrc-assistant-info--description,
+.vfrc-message,
+.vfrc-chat-input textarea,
+.vfrc-button--secondary {
+  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.vfrc-widget--chat {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  animation: fadeInChat 1s ease-out;
+}
+
+.c-kIbiaN-iiTsXc-size-small {
+  width: 35px;
+  height: 35px;
+  background-image: url("https://www.nextsolutionai.com/wp-content/uploads/2024/05/ezgif.com-rotate-1.gif");
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.vfrc-header {
+  background: linear-gradient(135deg, #5525f1) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 10px !important;
+}
+
+.c-bXTvXv.c-bXTvXv-XJvOL-type-warn {
+  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
+}
+
+.c-bXTvXv-igaDqE-type-subtle {
+  border: #000000 solid 1px !important;
+  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
+}
+
+.c-bQoszf > img {
+  display: none;
+}
+
+.vfrc-launcher {
+  width: 70px;
+  height: 70px;
+  border: none;
+  animation: fadeIn 0.5s ease-in-out;
+  transition: transform 150ms ease 0s !important;
+  background-image: url("https://www.nextsolutionai.com/wp-content/uploads/2024/05/ezgif.com-animated-gif-maker-1.gif") !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.vfrc-launcher:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vfrc-chat {
+  background-color: rgba(95, 95, 95, 0.07) !important;
+}
+
+.vfrc-chat-message {
+  color: #000000 !important;
+  margin-bottom: 15px !important;
+  border-radius: 10px !important;
+}
+
+.vfrc-assistant-info--title {
+  display: none !important;
+}
+
+.vfrc-header--button {
+  border: 1px solid #5525f1 !important;
+}
+
+.vfrc-header--title {
+  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
+}
+
+.vfrc-chat--spacer {
+  display: none !important;
+}
+
+.vfrc-assistant-info--description {
+  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
+  font-size: 15px !important;
+}
+
+.vfrc-message,
+.vfrc-chat-input textarea {
+  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
+}
+
+.vf-chat {
+  background-color: #3000cc !important;
+}
+
+.vfrc-header .vfrc-avatar {
+  display: none !important;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.vfrc-system-response--list {
+  background-color: #f2f2f2 !important;
+  border-radius: 10px !important;
+}
+
+.vfrc-message {
+  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.vfrc-proactive-message {
+  color: rgba(255, 255, 255, 0.81) !important;
+  backdrop-filter: blur(38px) saturate(179%) !important;
+  background-color: #1919190a !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+}
+
+.vfrc-system-response--actions {
+  display: block !important;
+}
+
+.vfrc-button--secondary {
+  border-radius: 10px !important;
+  border: 1px solid #b199ff !important;
+  background-color: #ebe6ff !important;
+  color: #0c0033 !important;
+  box-shadow: 0 1px 2px var(--shadows-shadow2) !important;
+  transition: border-color 150ms ease 0s, transform 150ms ease 0s !important;
+  margin: 4px !important;
+  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+.vfrc-button--secondary:hover {
+  border-color: #4c00ff !important;
+  background-color: #e0d7ff !important;
+  transition: background-color 150ms ease 0s, transform 150ms ease 0s !important;
+  transform: scale(1.05);
+}
+
+.vfrc-prompt,
+.vfrc-footer {
+  background-color: #ffffff !important;
+  border-top: solid #ebebeb 1px !important;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
+}
+
+.vfrc-chat-input textarea,
+.vfrc-chat-input--button {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: none !important;
+  padding-top: 10px !important;
+}
+
+.vfrc-bubble {
+  color: rgb(0, 4, 255) !important;
+  background-color: rgb(98, 0, 255) !important;
+  border: 1px solid rgb(255, 255, 255) !important;
+}
+
+.vfrc-bubble:hover {
+  border-color: #9ea1a5 !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.vfrc-chat--dialog {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.c-PJLV-jueArD-from-system {
+  background-color: #f2f2f2;
+  padding: 12px !important;
+  border-radius: 20px !important;
+}
+
+.vfrc-chat--session-time {
+  display: none !important;
+}
+
+.vfrc-system-response--list {
+  background-color: #f2f2f2 !important;
+  border-radius: 10px 10px 10px 10px !important;
+}
+
+.c-PJLV-gJqBfM-from-user {
+  border-radius: 10px 10px 10px 10px !important;
+}
+
+.vfrc-loading {
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #5525f1;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.vfrc-chat-input--button {
+  width: 42px;
+}
+
+.vfrc-footer {
+  padding-bottom: 10px;
+}
+
+.vfrc-footer--watermark {
+  display: none !important;
+}
+
+.vfrc-carousel {
+  background-color: #FFFFFF;
+}
+
+/* Media Queries */
+@media (min-width: 1200px) {
+  .vfrc-widget--chat {
+    max-height: 704px !important;
+    width: 400px !important;
+    border-radius: 30px !important;
+  }
+  .vfrc-button--secondary {
+    margin-left: 10px !important;
+  }
+}
+
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .vfrc-widget--chat {
+    max-height: 704px !important;
+    width: 400px !important;
+    border-radius: 30px !important;
+  }
+  .vfrc-button--secondary {
+    margin-left: 10px !important;
+  }
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+  .vfrc-button--secondary {
+    margin-left: 10px !important;
+  }
+}
+
+@media (max-width: 767.98px) and (min-width: 576px) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+  .c-kIbiaN-iiTsXc-size-small {
+    display: none !important;
+  }
+  .vfrc-system-response--actions {
+    padding-left: 17px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+  .c-kIbiaN-iiTsXc-size-small {
+    display: none !important;
+  }
+  .vfrc-system-response--actions {
+    padding-left: 17px !important;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+@media only screen and (min-device-width: 834px) and (max-device-width: 834px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+@media only screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* ----------- iPad Pro 12.9" ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+@media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .vfrc-widget--chat {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+}
