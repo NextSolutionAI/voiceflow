@@ -156,7 +156,7 @@
 }
 
 .vfrc-button--secondary:hover {
-  border-color: #4c00ff !important;
+  border-color: #E1B7BF !important;
   background-color: #dba9b3 !important;
   transition: background-color 150ms ease 0s, transform 150ms ease 0s !important;
   transform: scale(1.05);
