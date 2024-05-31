@@ -144,9 +144,9 @@
 
 .vfrc-button--secondary {
   border-radius: 10px !important;
-  border: 1px solid #E15E75 !important;
-  background-color: #F7EDEF !important;
-  color: #0c0033 !important;
+  border: 1px solid #a75262 !important;
+  background-color: #E8D0D5 !important;
+  color: #07060a !important;
   box-shadow: 0 1px 2px var(--shadows-shadow2) !important;
   transition: border-color 150ms ease 0s, transform 150ms ease 0s !important;
   margin: 4px !important;
@@ -156,7 +156,7 @@
 }
 
 .vfrc-button--secondary:hover {
-  border-color: #E1B7BF !important;
+  border-color: #ff002f !important;
   background-color: #dba9b3 !important;
   transition: background-color 150ms ease 0s, transform 150ms ease 0s !important;
   transform: scale(1.05);
@@ -179,14 +179,14 @@
 }
 
 .vfrc-bubble {
-  color: rgb(0, 4, 255) !important;
-  background-color: rgb(98, 0, 255) !important;
+  color: rgb(225,94,117) !important;
+  background-color: rgb(225,94,117) !important;
   border: 1px solid rgb(255, 255, 255) !important;
 }
 
 .vfrc-bubble:hover {
-  border-color: #9ea1a5 !important;
-  background-color: rgba(0, 0, 0, 0) !important;
+  border-color: #ff0000 !important;
+  color: rgba(0, 0, 0, 0) !important;
 }
 
 .vfrc-chat--dialog {
