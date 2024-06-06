@@ -566,4 +566,4 @@ export const CalendlyExtension = {
 
         Calendly.initPopupWidget({ url });
       },
-    };
+    }
