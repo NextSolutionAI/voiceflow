@@ -563,5 +563,7 @@ export const CalendlyExtension = {
     });
 
     element.appendChild(calendlyBtn);
+
+    Calendly.initPopupWidget({ url });
   },
 };
