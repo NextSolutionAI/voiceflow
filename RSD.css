@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap");
 
+body,
 .vfrc-widget--chat,
 .vfrc-header--title,
 .vfrc-assistant-info--description,
@@ -14,9 +15,6 @@
 
 .vfrc-widget--chat {
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2) !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
   animation: fadeInChat 1s ease-out;
 }
 
@@ -28,19 +26,23 @@
   background-position: center !important;
 }
 
-.vfrc-header {
-  background: linear-gradient(135deg, #5525f1) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  border-top: 10px !important;
+.vfrc-widget--card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-.c-bXTvXv.c-bXTvXv-XJvOL-type-warn {
+.vfrc-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.c-bXTvXv.c-bXTvXv-XJvOL-type-warn,
+.c-bXTvXv-igaDqE-type-subtle {
   font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
 }
 
 .c-bXTvXv-igaDqE-type-subtle {
   border: #000000 solid 1px !important;
-  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
 }
 
 .c-bQoszf > img {
@@ -88,11 +90,7 @@
 }
 
 .vfrc-header--button {
-  border: 1px solid #FFFFFF !important;
-}
-
-.vfrc-header--title {
-  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
+  border: 1px solid #ffffff !important;
 }
 
 .vfrc-chat--spacer {
@@ -100,13 +98,7 @@
 }
 
 .vfrc-assistant-info--description {
-  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
   font-size: 15px !important;
-}
-
-.vfrc-message,
-.vfrc-chat-input textarea {
-  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
 }
 
 .vf-chat {
@@ -123,17 +115,10 @@
   border-radius: 10px !important;
 }
 
-.vfrc-message {
-  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
-  text-rendering: optimizeLegibility !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-}
-
 .vfrc-proactive-message {
   color: rgba(255, 255, 255, 0.81) !important;
   backdrop-filter: blur(38px) saturate(179%) !important;
-  background-color: #1919190a !important;
+  background-color: rgba(25, 25, 25, 0.04) !important;
   border-radius: 12px !important;
   border: 1px solid rgba(255, 255, 255, 0.24) !important;
 }
@@ -145,12 +130,11 @@
 .vfrc-button--secondary {
   border-radius: 10px !important;
   border: 1px solid #a75262 !important;
-  background-color: #E8D0D5 !important;
+  background-color: #e8d0d5 !important;
   color: #07060a !important;
   box-shadow: 0 1px 2px var(--shadows-shadow2) !important;
   transition: border-color 150ms ease 0s, transform 150ms ease 0s !important;
   margin: 4px !important;
-  font-family: "Roboto", "DM Sans", "Helvetica", "Arial", "Verdana", sans-serif !important;
   font-size: 13px !important;
   font-weight: 700 !important;
 }
@@ -158,14 +142,13 @@
 .vfrc-button--secondary:hover {
   border-color: #ff002f !important;
   background-color: #dba9b3 !important;
-  transition: background-color 150ms ease 0s, transform 150ms ease 0s !important;
   transform: scale(1.05);
 }
 
 .vfrc-prompt,
 .vfrc-footer {
   background-color: #ffffff !important;
-  border-top: solid #ebebeb 1px !important;
+  border-top: solid #ebebeb 2px !important;
   border-top-left-radius: 0%;
   border-top-right-radius: 0%;
 }
@@ -179,8 +162,8 @@
 }
 
 .vfrc-bubble {
-  color: rgb(225,94,117) !important;
-  background-color: rgb(225,94,117) !important;
+  color: rgb(225, 94, 117) !important;
+  background-color: rgb(225, 94, 117) !important;
   border: 1px solid rgb(255, 255, 255) !important;
 }
 
@@ -202,15 +185,6 @@
 
 .vfrc-chat--session-time {
   display: none !important;
-}
-
-.vfrc-system-response--list {
-  background-color: #f2f2f2 !important;
-  border-radius: 10px 10px 10px 10px !important;
-}
-
-.c-PJLV-gJqBfM-from-user {
-  border-radius: 10px 10px 10px 10px !important;
 }
 
 .vfrc-loading {
@@ -244,7 +218,8 @@
 }
 
 .vfrc-carousel {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  width: 248px;
 }
 
 /* Media Queries */
@@ -329,181 +304,19 @@
   }
 }
 
-/* ----------- iPad 1, 2, Mini and Air ----------- */
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    position: fixed !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
-  }
-}
-
-/* Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    position: fixed !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
-  }
-}
-
-/* Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    position: fixed !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
-  }
-}
-
-/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    position: fixed !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
-  }
-}
-
-/* Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    position: fixed !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
-  }
-}
-
-/* Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    position: fixed !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
-  }
-}
-
-/* ----------- iPad Pro 10.5" ----------- */
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    position: fixed !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
-  }
-}
-
-/* Portrait */
-/* Declare the same value for min- and max-width to avoid colliding with desktops */
-@media only screen and (min-device-width: 834px) and (max-device-width: 834px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    position: fixed !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
-  }
-}
-
-/* Landscape */
-/* Declare the same value for min- and max-width to avoid colliding with desktops */
-@media only screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    position: fixed !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
-  }
-}
-
-/* ----------- iPad Pro 12.9" ----------- */
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    position: fixed !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
-  }
-}
-
-/* Portrait */
-/* Declare the same value for min- and max-width to avoid colliding with desktops */
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0 !important;
-    position: fixed !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
-  }
-}
-
-/* Landscape */
-/* Declare the same value for min- and max-width to avoid colliding with desktops */
-@media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+/* iPad 1, 2, Mini and Air */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1),
+  only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1),
+  only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1),
+  only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-width: 834px) and (max-device-width: 834px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
   .vfrc-widget--chat {
     width: 100% !important;
     height: 100% !important;
