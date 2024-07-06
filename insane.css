@@ -157,7 +157,7 @@
 .c-bXTvXv-igaDqE-type-subtle {
   margin: 0px;
   border: 1px solid transparent;
-  font-size: 1rem !important;
+  font-size: 16px;
   font-weight: 500;
   border-radius: 8px;
   line-height: 20px;
@@ -185,7 +185,7 @@
   padding: 10px 14px;
   font-weight: normal;
   line-height: 1.25;
-  font-size: 1rem !important;
+  font-size: 16px;
   word-break: break-word;
   white-space: pre-wrap;
   box-sizing: border-box;
@@ -215,7 +215,7 @@
 .vfrc-button--secondary {
   display: inline-block;
   border: 1px solid rgba(0, 43, 69, 0.45);
-  font-size: 1rem !important;
+  font-size: 16px;
   font-weight: 500;
   border-radius: 20px;
   padding: 9px 13px;
