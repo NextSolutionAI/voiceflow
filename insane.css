@@ -30,6 +30,19 @@
   border: none;
 }
 
+.c-dzcdPv .vfrc-header--button {
+  border: none;
+  background: none;
+  padding: 0px;
+  cursor: pointer;
+  font-size: 0px;
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  height: 32px;
+  width: 32px;
+  transition: all 100ms ease 0s;
+}
+
 .c-dhzjXW {
   width: 24px !important;
   height: 24px !important;
@@ -54,12 +67,11 @@
 }
 
 .vfrc-carousel--button .vfrc-icon {
-  background-image: url('https://svgshare.com/i/17v8.svg'); /* Use the left arrow icon */
+  background-image: url("https://svgshare.com/i/17v8.svg") !important;
 }
 
-/* Flip the right carousel button icon horizontally */
 .vfrc-carousel--button.c-fHxDoY-kQWEXg-alignment-right .vfrc-icon {
-  transform: scaleX(-1);
+  transform: scaleX(-1) !important;
 }
 
 .vfrc-icon svg {
@@ -78,6 +90,12 @@
   opacity: 0;
   transform: translateY(16px);
   animation: 400ms ease-out 150ms 1 normal forwards running cxARAE;
+}
+
+.c-cNrVYs .c-fYYkXN {
+  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
+    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
+    sans-serif;
 }
 
 .c-fYYkXN {
@@ -126,28 +144,6 @@
   background-color: #ffffff;
 }
 
-.vfrc-input {
-  width: 100%;
-  resize: none;
-  margin: 0px;
-  border: none;
-  background-color: rgb(255, 255, 255);
-  font-size: 1rem;
-  line-height: 1.25;
-  outline: none;
-  box-sizing: border-box;
-  padding: 10px 38px 10px 13px;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
-  border-radius: 100px !important;
-}
-
-.c-jUajGf img {
-  height: 248px;
-  border-radius: inherit;
-}
-
 .c-bXTvXv-lckiv-type-info {
   background-color: #002b45;
   font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
@@ -157,14 +153,6 @@
 
 .c-bXTvXv-lckiv-type-info:hover {
   background-color: #014a77;
-}
-
-.c-kIbiaN-iiTsXc-size-small.c-kIbiaN-ibOzpeE-css {
-  background-image: url("https://www.nextsolutionai.com/wp-content/uploads/2024/05/R.png");
-  background-size: cover !important;
-  background-position: center !important;
-  width: 26px;
-  height: 26px;
 }
 
 .c-bXTvXv-igaDqE-type-subtle {
