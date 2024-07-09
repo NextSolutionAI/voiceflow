@@ -529,41 +529,16 @@ export const FeedbackExtension = {
 
 export const CalendlyExtension = {
   name: "Calendly",
-  type: "response",
-  match: ({ trace }) =>
-    trace.type === "ext_calendly" || trace.payload.name === "ext_calendly",
-  render: ({ trace, element }) => {
+  type: "effect",
+  match: ({ trace }) => {
+    return (
+      trace.type === "ext_calendly" || trace.payload.name === "ext_calendly"
+    );
+  },
+  effect: ({ trace }) => {
     const { url } = trace.payload;
-
-    const calendlyBtn = document.createElement("button");
-    calendlyBtn.textContent = "Book a call";
-    calendlyBtn.id = "calendlyBtn";
-    calendlyBtn.style.backgroundColor = "#3000cc";
-    calendlyBtn.style.color = "#fff";
-    calendlyBtn.style.border = "none";
-    calendlyBtn.style.borderRadius = "5px";
-    calendlyBtn.style.padding = "10px 20px";
-    calendlyBtn.style.cursor = "pointer";
-    calendlyBtn.style.transition =
-      "background-color 150ms ease 0s, transform 150ms ease 0s";
-    calendlyBtn.style.fontFamily = "Roboto, sans-serif";
-
-    calendlyBtn.addEventListener("mouseenter", function () {
-      calendlyBtn.style.backgroundColor = "#5525f1";
-      calendlyBtn.style.transform = "scale(1.05)";
-    });
-
-    calendlyBtn.addEventListener("mouseleave", function () {
-      calendlyBtn.style.backgroundColor = "#3000cc";
-      calendlyBtn.style.transform = "scale(1)";
-    });
-
-    calendlyBtn.addEventListener("click", function () {
+    if (url) {
       Calendly.initPopupWidget({ url });
-    });
-
-    element.appendChild(calendlyBtn);
-
-    Calendly.initPopupWidget({ url });
+    }
   },
 };
