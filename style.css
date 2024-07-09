@@ -52,31 +52,6 @@
   color: #f3f3f3;
 }
 
-.vfrc-header--button:nth-of-type(1) .vfrc-icon {
-  background-image: url("https://svgshare.com/i/17wp.svg");
-}
-
-.vfrc-header--button:nth-of-type(2) .vfrc-icon {
-  background-image: url("https://svgshare.com/i/17wL.svg");
-}
-
-.vfrc-icon.c-dhzjXW-iPJLV-css {
-  background-image: url("https://svgshare.com/i/17xA.svg") !important;
-  color: #ffffff;
-}
-
-.vfrc-carousel--button .vfrc-icon {
-  background-image: url("https://svgshare.com/i/17v8.svg") !important;
-}
-
-.vfrc-carousel--button.c-fHxDoY-kQWEXg-alignment-right .vfrc-icon {
-  transform: scaleX(-1) !important;
-}
-
-.vfrc-icon svg {
-  display: none;
-}
-
 .vfrc-chat-dialog {
   flex: 1 1 0px;
   overflow: hidden;
@@ -182,13 +157,7 @@
 
 .vfrc-message {
   border-radius: 20px;
-  padding: 10px 14px;
   font-weight: normal;
-  line-height: 1.25;
-  font-size: 16px;
-  word-break: break-word;
-  white-space: pre-wrap;
-  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
     "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
     sans-serif;
