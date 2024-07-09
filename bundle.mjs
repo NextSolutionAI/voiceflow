@@ -1229,19 +1229,19 @@
                     st === void 0 &&
                       ne(
                         `lazy: Expected the result of a dynamic import() call. Instead received: %s
-
-Your code should look like: 
-  const MyComponent = lazy(() => import('./MyComponent'))
-
-Did you accidentally put curly braces around the import?`,
+  
+  Your code should look like: 
+    const MyComponent = lazy(() => import('./MyComponent'))
+  
+  Did you accidentally put curly braces around the import?`,
                         st
                       ),
                     "default" in st ||
                       ne(
                         `lazy: Expected the result of a dynamic import() call. Instead received: %s
-
-Your code should look like: 
-  const MyComponent = lazy(() => import('./MyComponent'))`,
+  
+  Your code should look like: 
+    const MyComponent = lazy(() => import('./MyComponent'))`,
                         st
                       ),
                     st.default
@@ -1388,10 +1388,10 @@ Your code should look like:
                 return (
                   P === null &&
                     ne(`Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.`),
+  1. You might have mismatching versions of React and the renderer (such as React DOM)
+  2. You might be breaking the Rules of Hooks
+  3. You might have more than one copy of React in the same app
+  See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.`),
                   P
                 );
               }
@@ -1540,7 +1540,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
                     }
                   return (
                     `
-` +
+  ` +
                     vo +
                     P
                   );
@@ -1603,9 +1603,9 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
                   if (Gn && Be && typeof Gn.stack == "string") {
                     for (
                       var Jt = Gn.stack.split(`
-`),
+  `),
                         An = Be.stack.split(`
-`),
+  `),
                         fr = Jt.length - 1,
                         gr = An.length - 1;
                       fr >= 1 && gr >= 0 && Jt[fr] !== An[gr];
@@ -1619,7 +1619,7 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
                             if ((fr--, gr--, gr < 0 || Jt[fr] !== An[gr])) {
                               var yr =
                                 `
-` + Jt[fr].replace(" at new ", " at ");
+  ` + Jt[fr].replace(" at new ", " at ");
                               return (
                                 P.displayName &&
                                   yr.includes("<anonymous>") &&
@@ -1754,8 +1754,8 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
                   if (P)
                     return (
                       `
-
-Check the render method of \`` +
+  
+  Check the render method of \`` +
                       P +
                       "`."
                     );
@@ -1768,8 +1768,8 @@ Check the render method of \`` +
                     Ne = P.lineNumber;
                   return (
                     `
-
-Check your code at ` +
+  
+  Check your code at ` +
                     ce +
                     ":" +
                     Ne +
@@ -1789,8 +1789,8 @@ Check your code at ` +
                   Ne &&
                     (ce =
                       `
-
-Check the top-level render call using <` +
+  
+  Check the top-level render call using <` +
                       Ne +
                       ">.");
                 }
@@ -2455,7 +2455,7 @@ Check the top-level render call using <` +
                 }
               return (
                 `
-` +
+  ` +
                 mt +
                 de
               );
@@ -2518,9 +2518,9 @@ Check the top-level render call using <` +
               if (Ni && Tt && typeof Ni.stack == "string") {
                 for (
                   var Wt = Ni.stack.split(`
-`),
+  `),
                     ya = Tt.stack.split(`
-`),
+  `),
                     Cr = Wt.length - 1,
                     Ir = ya.length - 1;
                   Cr >= 1 && Ir >= 0 && Wt[Cr] !== ya[Ir];
@@ -2534,7 +2534,7 @@ Check the top-level render call using <` +
                         if ((Cr--, Ir--, Ir < 0 || Wt[Cr] !== ya[Ir])) {
                           var ei =
                             `
-` + Wt[Cr].replace(" at new ", " at ");
+  ` + Wt[Cr].replace(" at new ", " at ");
                           return (
                             de.displayName &&
                               ei.includes("<anonymous>") &&
@@ -2830,8 +2830,8 @@ Check the top-level render call using <` +
                 if (de)
                   return (
                     `
-
-Check the render method of \`` +
+  
+  Check the render method of \`` +
                     de +
                     "`."
                   );
@@ -2846,8 +2846,8 @@ Check the render method of \`` +
                   gt = de.lineNumber;
                 return (
                   `
-
-Check your code at ` +
+  
+  Check your code at ` +
                   Xe +
                   ":" +
                   gt +
@@ -2866,8 +2866,8 @@ Check your code at ` +
                 gt &&
                   (Xe =
                     `
-
-Check the top-level render call using <` +
+  
+  Check the top-level render call using <` +
                     gt +
                     ">.");
               }
@@ -3950,7 +3950,7 @@ Check the top-level render call using <` +
         }
       return (
         `
-` +
+  ` +
         ye +
         o
       );
@@ -4000,9 +4000,9 @@ Check the top-level render call using <` +
         if (Me && y && typeof Me.stack == "string") {
           for (
             var _ = Me.stack.split(`
-`),
+  `),
               R = y.stack.split(`
-`),
+  `),
               B = _.length - 1,
               ae = R.length - 1;
             1 <= B && 0 <= ae && _[B] !== R[ae];
@@ -4016,7 +4016,7 @@ Check the top-level render call using <` +
                   if ((B--, ae--, 0 > ae || _[B] !== R[ae])) {
                     var ve =
                       `
-` + _[B].replace(" at new ", " at ");
+  ` + _[B].replace(" at new ", " at ");
                     return (
                       o.displayName &&
                         ve.includes("<anonymous>") &&
@@ -6422,7 +6422,7 @@ Check the top-level render call using <` +
         .replace(
           nv,
           `
-`
+  `
         )
         .replace(op, "");
     }
@@ -8265,10 +8265,10 @@ Check the top-level render call using <` +
       } catch (R) {
         _ =
           `
-Error generating stack: ` +
+  Error generating stack: ` +
           R.message +
           `
-` +
+  ` +
           R.stack;
       }
       return { value: o, source: u, stack: _, digest: null };
@@ -12849,7 +12849,7 @@ Error generating stack: ` +
                 }
               return (
                 `
-` +
+  ` +
                 Su +
                 r
               );
@@ -12912,9 +12912,9 @@ Error generating stack: ` +
               if (Le && f && typeof Le.stack == "string") {
                 for (
                   var k = Le.stack.split(`
-`),
+  `),
                     M = f.stack.split(`
-`),
+  `),
                     j = k.length - 1,
                     K = M.length - 1;
                   j >= 1 && K >= 0 && k[j] !== M[K];
@@ -12928,7 +12928,7 @@ Error generating stack: ` +
                         if ((j--, K--, K < 0 || k[j] !== M[K])) {
                           var Te =
                             `
-` + k[j].replace(" at new ", " at ");
+  ` + k[j].replace(" at new ", " at ");
                           return (
                             r.displayName &&
                               Te.includes("<anonymous>") &&
@@ -13019,10 +13019,10 @@ Error generating stack: ` +
             } catch (f) {
               return (
                 `
-Error generating stack: ` +
+  Error generating stack: ` +
                 f.message +
                 `
-` +
+  ` +
                 f.stack
               );
             }
@@ -13485,8 +13485,8 @@ Error generating stack: ` +
             var r = go();
             return r
               ? `
-
-Check the render method of \`` +
+  
+  Check the render method of \`` +
                   r +
                   "`."
               : "";
@@ -18143,7 +18143,7 @@ Check the render method of \`` +
               .replace(
                 Gue,
                 `
-`
+  `
               )
               .replace(Wue, "");
           }
@@ -20164,10 +20164,10 @@ Check the render method of \`` +
                   var A = Wp(a);
                   d(
                     `Using UNSAFE_componentWillMount in strict mode is not recommended and may indicate bugs in your code. See https://reactjs.org/link/unsafe-component-lifecycles for details.
-
-* Move code with side effects to componentDidMount, and set initial state in the constructor.
-
-Please update the following components: %s`,
+  
+  * Move code with side effects to componentDidMount, and set initial state in the constructor.
+  
+  Please update the following components: %s`,
                     A
                   );
                 }
@@ -20175,11 +20175,11 @@ Please update the following components: %s`,
                   var k = Wp(f);
                   d(
                     `Using UNSAFE_componentWillReceiveProps in strict mode is not recommended and may indicate bugs in your code. See https://reactjs.org/link/unsafe-component-lifecycles for details.
-
-* Move data fetching code or side effects to componentDidUpdate.
-* If you're updating state whenever props change, refactor your code to use memoization techniques or move it to static getDerivedStateFromProps. Learn more at: https://reactjs.org/link/derived-state
-
-Please update the following components: %s`,
+  
+  * Move data fetching code or side effects to componentDidUpdate.
+  * If you're updating state whenever props change, refactor your code to use memoization techniques or move it to static getDerivedStateFromProps. Learn more at: https://reactjs.org/link/derived-state
+  
+  Please update the following components: %s`,
                     k
                   );
                 }
@@ -20187,10 +20187,10 @@ Please update the following components: %s`,
                   var M = Wp(b);
                   d(
                     `Using UNSAFE_componentWillUpdate in strict mode is not recommended and may indicate bugs in your code. See https://reactjs.org/link/unsafe-component-lifecycles for details.
-
-* Move data fetching code or side effects to componentDidUpdate.
-
-Please update the following components: %s`,
+  
+  * Move data fetching code or side effects to componentDidUpdate.
+  
+  Please update the following components: %s`,
                     M
                   );
                 }
@@ -20198,11 +20198,11 @@ Please update the following components: %s`,
                   var j = Wp(r);
                   h(
                     `componentWillMount has been renamed, and is not recommended for use. See https://reactjs.org/link/unsafe-component-lifecycles for details.
-
-* Move code with side effects to componentDidMount, and set initial state in the constructor.
-* Rename componentWillMount to UNSAFE_componentWillMount to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run \`npx react-codemod rename-unsafe-lifecycles\` in your project source folder.
-
-Please update the following components: %s`,
+  
+  * Move code with side effects to componentDidMount, and set initial state in the constructor.
+  * Rename componentWillMount to UNSAFE_componentWillMount to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run \`npx react-codemod rename-unsafe-lifecycles\` in your project source folder.
+  
+  Please update the following components: %s`,
                     j
                   );
                 }
@@ -20210,12 +20210,12 @@ Please update the following components: %s`,
                   var K = Wp(s);
                   h(
                     `componentWillReceiveProps has been renamed, and is not recommended for use. See https://reactjs.org/link/unsafe-component-lifecycles for details.
-
-* Move data fetching code or side effects to componentDidUpdate.
-* If you're updating state whenever props change, refactor your code to use memoization techniques or move it to static getDerivedStateFromProps. Learn more at: https://reactjs.org/link/derived-state
-* Rename componentWillReceiveProps to UNSAFE_componentWillReceiveProps to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run \`npx react-codemod rename-unsafe-lifecycles\` in your project source folder.
-
-Please update the following components: %s`,
+  
+  * Move data fetching code or side effects to componentDidUpdate.
+  * If you're updating state whenever props change, refactor your code to use memoization techniques or move it to static getDerivedStateFromProps. Learn more at: https://reactjs.org/link/derived-state
+  * Rename componentWillReceiveProps to UNSAFE_componentWillReceiveProps to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run \`npx react-codemod rename-unsafe-lifecycles\` in your project source folder.
+  
+  Please update the following components: %s`,
                     K
                   );
                 }
@@ -20223,11 +20223,11 @@ Please update the following components: %s`,
                   var Te = Wp(m);
                   h(
                     `componentWillUpdate has been renamed, and is not recommended for use. See https://reactjs.org/link/unsafe-component-lifecycles for details.
-
-* Move data fetching code or side effects to componentDidUpdate.
-* Rename componentWillUpdate to UNSAFE_componentWillUpdate to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run \`npx react-codemod rename-unsafe-lifecycles\` in your project source folder.
-
-Please update the following components: %s`,
+  
+  * Move data fetching code or side effects to componentDidUpdate.
+  * Rename componentWillUpdate to UNSAFE_componentWillUpdate to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run \`npx react-codemod rename-unsafe-lifecycles\` in your project source folder.
+  
+  Please update the following components: %s`,
                     Te
                   );
                 }
@@ -20263,12 +20263,12 @@ Please update the following components: %s`,
                       Kr(s),
                         d(
                           `Legacy context API has been detected within a strict-mode tree.
-
-The old API will be supported in all 16.x releases, but applications using it should migrate to the new version.
-
-Please update the following components: %s
-
-Learn more about this warning here: https://reactjs.org/link/legacy-context`,
+  
+  The old API will be supported in all 16.x releases, but applications using it should migrate to the new version.
+  
+  Please update the following components: %s
+  
+  Learn more about this warning here: https://reactjs.org/link/legacy-context`,
                           m
                         );
                     } finally {
@@ -21158,24 +21158,24 @@ Learn more about this warning here: https://reactjs.org/link/legacy-context`,
                     (jO.add(kt),
                     d(
                       `Unsafe legacy lifecycles will not be called for components using new component APIs.
-
-%s uses %s but also contains the following legacy lifecycles:%s%s%s
-
-The above lifecycles should be removed. Learn more about this warning here:
-https://reactjs.org/link/unsafe-component-lifecycles`,
+  
+  %s uses %s but also contains the following legacy lifecycles:%s%s%s
+  
+  The above lifecycles should be removed. Learn more about this warning here:
+  https://reactjs.org/link/unsafe-component-lifecycles`,
                       kt,
                       Zt,
                       Ie !== null
                         ? `
-  ` + Ie
+    ` + Ie
                         : "",
                       Le !== null
                         ? `
-  ` + Le
+    ` + Le
                         : "",
                       He !== null
                         ? `
-  ` + He
+    ` + He
                         : ""
                     ));
                 }
@@ -21472,10 +21472,10 @@ https://reactjs.org/link/unsafe-component-lifecycles`,
                     "Element ref was specified as a string (" +
                       f +
                       `) but no owner was set. This could happen for one of the following reasons:
-1. You may be adding a ref to a function component
-2. You may be adding a ref to a component that was not created inside a component's render method
-3. You have multiple copies of React loaded
-See https://reactjs.org/link/refs-must-have-owner for more information.`
+  1. You may be adding a ref to a function component
+  2. You may be adding a ref to a component that was not created inside a component's render method
+  3. You have multiple copies of React loaded
+  See https://reactjs.org/link/refs-must-have-owner for more information.`
                   );
               }
             }
@@ -22167,16 +22167,16 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`
                   (k +=
                     A +
                     `
-`),
+  `),
                     (s += k);
                 }
                 d(
                   `React has detected a change in the order of Hooks called by %s. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks: https://reactjs.org/link/rules-of-hooks
-
-   Previous render            Next render
-   ------------------------------------------------------
-%s   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-`,
+  
+     Previous render            Next render
+     ------------------------------------------------------
+  %s   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  `,
                   a,
                   s
                 );
@@ -22185,10 +22185,10 @@ See https://reactjs.org/link/refs-must-have-owner for more information.`
           }
           function Lo() {
             throw new Error(`Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.`);
+  1. You might have mismatching versions of React and the renderer (such as React DOM)
+  2. You might be breaking the Rules of Hooks
+  3. You might have more than one copy of React in the same app
+  See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.`);
           }
           function cR(r, a) {
             if (lR) return !1;
@@ -22203,9 +22203,9 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
             r.length !== a.length &&
               d(
                 `The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
-
-Previous: %s
-Incoming: %s`,
+  
+  Previous: %s
+  Incoming: %s`,
                 We,
                 "[" + a.join(", ") + "]",
                 "[" + r.join(", ") + "]"
@@ -23628,7 +23628,7 @@ Incoming: %s`,
                 j;
               if (r.tag === x)
                 j = `Consider adding an error boundary to your tree to customize error handling behavior.
-Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.`;
+  Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.`;
               else {
                 var K = un(r) || "Anonymous";
                 j =
@@ -23638,11 +23638,11 @@ Visit https://reactjs.org/link/error-boundaries to learn more about error bounda
               var Te =
                 M +
                 `
-` +
+  ` +
                 A +
                 `
-
-` +
+  
+  ` +
                 ("" + j);
               console.error(Te);
             } catch (Ee) {
@@ -24372,8 +24372,8 @@ Visit https://reactjs.org/link/error-boundaries to learn more about error bounda
                 f &&
                   (s +=
                     `
-
-Check the render method of \`` +
+  
+  Check the render method of \`` +
                     f +
                     "`.");
                 var m = f || "",
@@ -25849,23 +25849,23 @@ Check the render method of \`` +
                         : typeof k.then == "function"
                         ? (j =
                             `
-
-It looks like you wrote ` +
+  
+  It looks like you wrote ` +
                             M +
                             `(async () => ...) or returned a Promise. Instead, write the async function inside your effect and call it immediately:
-
-` +
+  
+  ` +
                             M +
                             `(() => {
-  async function fetchData() {
-    // You can await here
-    const response = await MyAPI.getData(someId);
-    // ...
-  }
-  fetchData();
-}, [someId]); // Or [] if effect doesn't need props or state
-
-Learn more about data fetching with Hooks: https://reactjs.org/link/hooks-data-fetching`)
+    async function fetchData() {
+      // You can await here
+      const response = await MyAPI.getData(someId);
+      // ...
+    }
+    fetchData();
+  }, [someId]); // Or [] if effect doesn't need props or state
+  
+  Learn more about data fetching with Hooks: https://reactjs.org/link/hooks-data-fetching`)
                         : (j = " You returned: " + k),
                         d(
                           "%s must not return anything besides a function, which is used for clean-up.%s",
@@ -27855,10 +27855,10 @@ Learn more about data fetching with Hooks: https://reactjs.org/link/hooks-data-f
             }
             d(
               `Internal React error: Attempted to capture a commit phase error inside a detached tree. This indicates a bug in React. Likely causes include deleting the same fiber more than once, committing an already-finished tree, or an inconsistent return pointer.
-
-Error message:
-
-%s`,
+  
+  Error message:
+  
+  %s`,
               s
             );
           }
@@ -28095,15 +28095,15 @@ Error message:
                   Kr(r),
                     d(
                       `An update to %s inside a test was not wrapped in act(...).
-
-When testing, code that causes React state updates should be wrapped into act(...):
-
-act(() => {
-  /* fire events that update state */
-});
-/* assert on the output */
-
-This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act`,
+  
+  When testing, code that causes React state updates should be wrapped into act(...):
+  
+  act(() => {
+    /* fire events that update state */
+  });
+  /* assert on the output */
+  
+  This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act`,
                       un(r)
                     );
                 } finally {
@@ -28117,15 +28117,15 @@ This ensures that you're testing the behavior the user would see in the browser.
               x5() &&
               Fl.current === null &&
               d(`A suspended resource finished loading inside a test, but the event was not wrapped in act(...).
-
-When testing, code that resolves suspended data should be wrapped into act(...):
-
-act(() => {
-  /* finish loading suspended data */
-});
-/* assert on the output */
-
-This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act`);
+  
+  When testing, code that resolves suspended data should be wrapped into act(...):
+  
+  act(() => {
+    /* finish loading suspended data */
+  });
+  /* assert on the output */
+  
+  This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act`);
           }
           function Vy(r) {
             L5 = r;
@@ -28568,8 +28568,8 @@ This ensures that you're testing the behavior the user would see in the browser.
                     j &&
                       (M +=
                         `
-
-Check the render method of \`` +
+  
+  Check the render method of \`` +
                         j +
                         "`.");
                   }
@@ -28854,8 +28854,8 @@ Check the render method of \`` +
                 ((kx = !0),
                 d(
                   `Render methods should be a pure function of props and state; triggering nested component updates from render is not allowed. If necessary, trigger nested updates in componentDidUpdate.
-
-Check the render method of %s.`,
+  
+  Check the render method of %s.`,
                   un(jr) || "Unknown"
                 ));
             var M = Bf(b, A);
@@ -29189,9 +29189,9 @@ Check the render method of %s.`,
                   a !== null &&
                   a.$$typeof === ki &&
                   d(`You passed a JSX element to createRoot. You probably meant to call root.render instead. Example usage:
-
-  let root = createRoot(domContainer);
-  root.render(<App />);`),
+  
+    let root = createRoot(domContainer);
+    root.render(<App />);`),
               a.unstable_strictMode === !0 && (s = !0),
               a.identifierPrefix !== void 0 && (m = a.identifierPrefix),
               a.onRecoverableError !== void 0 && (b = a.onRecoverableError),
@@ -29560,7 +29560,7 @@ Check the render method of %s.`,
                 "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools" +
                   (k8 === "file:"
                     ? `
-You might need to use a local HTTP server (instead of file://): https://reactjs.org/link/react-devtools-faq`
+  You might need to use a local HTTP server (instead of file://): https://reactjs.org/link/react-devtools-faq`
                     : ""),
                 "font-weight:bold"
               );
@@ -33408,15 +33408,13 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
       })
       .strict(),
     kU = v.discriminatedUnion("type", [xU, wU]),
-    QT = so
-      .partial({ updatedAt: !0, updatedByID: !0 })
-      .extend({
-        intentID: v.string(),
-        entityID: v.string(),
-        repromptID: v.string().nullable(),
-        assistantID: v.string().optional(),
-        environmentID: v.string().optional(),
-      }),
+    QT = so.partial({ updatedAt: !0, updatedByID: !0 }).extend({
+      intentID: v.string(),
+      entityID: v.string(),
+      repromptID: v.string().nullable(),
+      assistantID: v.string().optional(),
+      environmentID: v.string().optional(),
+    }),
     DU = v.object({ entityID: v.string() }).strict(),
     NU = v
       .object({
@@ -33425,15 +33423,13 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
       })
       .strict(),
     Nw = v.union([v.string(), DU, NU]).array(),
-    ZT = so
-      .partial({ updatedAt: !0, updatedByID: !0 })
-      .extend({
-        text: Nw,
-        language: v.nativeEnum(l1),
-        intentID: v.string(),
-        assistantID: v.string().optional(),
-        environmentID: v.string().optional(),
-      });
+    ZT = so.partial({ updatedAt: !0, updatedByID: !0 }).extend({
+      text: Nw,
+      language: v.nativeEnum(l1),
+      intentID: v.string(),
+      assistantID: v.string().optional(),
+      environmentID: v.string().optional(),
+    });
   kw
     .extend({ utterances: v.array(ZT), requiredEntities: v.array(QT) })
     .strict(),
@@ -47189,7 +47185,7 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
       S3(e, { encodeVariables: t, markdownLinks: n })
         .join(
           `
-`
+  `
         )
         .trim(),
     Dq = {
@@ -52942,8 +52938,9 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
       ...B3(Q_),
       ...F3,
     },
-    kK = "'Open Sans', sans-serif",
-    $3 = { 1: "13px", 2: "15px", 3: "18px" },
+    kK =
+      "-apple-system, BlinkMacSystemFont, 'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', Roboto, Helvetica, Arial, sans-serif",
+    $3 = { 1: "13px", 2: "16px", 3: "18px" },
     H3 = { 1: 400, 2: 600 },
     j3 = { 1: "20px", 2: "22px", 3: "24px" },
     z3 = 150,
@@ -53507,15 +53504,15 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
       $e.createElement(
         "svg",
         {
-          viewBox: "0 0 16 16",
+          viewBox: "0 0 24 24",
           xmlns: "http://www.w3.org/2000/svg",
           xmlnsXlink: "http://www.w3.org/1999/xlink",
           ...e,
         },
         $e.createElement("path", {
           id: "vf-close",
-          d: "M13.748 3.32a.773.773 0 0 0-1.093-1.094l-4.389 4.39a.363.363 0 0 1-.514 0L3.368 2.23a.779.779 0 0 0-1.101 0l-.039.038a.779.779 0 0 0 0 1.101l4.385 4.385a.363.363 0 0 1 0 .514l-4.37 4.37a.773.773 0 1 0 1.092 1.093l4.37-4.37a.363.363 0 0 1 .514 0l4.413 4.412a.779.779 0 0 0 1.101 0l.039-.038a.779.779 0 0 0 0-1.101L9.359 8.222a.363.363 0 0 1 0-.514l4.389-4.389z",
-          fill: "currentColor",
+          d: "M13.41,12l6.3-6.29a1,1,0,1,0-1.42-1.42L12,10.59,5.71,4.29A1,1,0,0,0,4.29,5.71L10.59,12l-6.3,6.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l6.29,6.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z",
+          fill: "#666666",
         })
       ),
     KK = (e) =>
@@ -53557,17 +53554,17 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
       $e.createElement(
         "svg",
         {
-          viewBox: "0 0 16 16",
+          viewBox: "0 0 24 24",
           xmlns: "http://www.w3.org/2000/svg",
           xmlnsXlink: "http://www.w3.org/1999/xlink",
           ...e,
         },
         $e.createElement(
           "g",
-          { id: "vf-minus", fill: "none", fillRule: "evenodd" },
+          { id: "vf-minus", fill: "#666666", fillRule: "evenodd" },
           $e.createElement("path", {
-            d: "M15 8a.84.84 0 0 1-.84.84H1.84a.84.84 0 0 1 0-1.68h12.32A.84.84 0 0 1 15 8z",
-            fill: "currentColor",
+            d: "M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z",
+            fill: "#666666",
           })
         )
       ),
@@ -53575,11 +53572,14 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
       $e.createElement(
         "svg",
         {
-          viewBox: "0 0 16 16",
+          viewBox: "0 0 24 24",
           xmlns: "http://www.w3.org/2000/svg",
-          xmlnsXlink: "http://www.w3.org/1999/xlink",
           ...e,
         },
+        $e.createElement("path", {
+          d: "M17.71,11.29l-5-5a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-5,5a1,1,0,0,0,1.42,1.42L11,9.41V17a1,1,0,0,0,2,0V9.41l3.29,3.3a1,1,0,0,0,1.42,0A1,1,0,0,0,17.71,11.29Z", // Updated path data
+          fill: "currentColor", 
+        }),
         $e.createElement(
           "defs",
           null,
@@ -53618,18 +53618,8 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
           },
           $e.createElement(
             "g",
-            {
-              id: "Path",
-              transform:
-                "translate(7.750018, 7.999984) rotate(180.000000) translate(-7.750018, -7.999984) ",
-            },
             $e.createElement("use", {
               fill: "currentColor",
-              xlinkHref: "#path-2",
-            }),
-            $e.createElement("use", {
-              fillOpacity: 0.85,
-              fill: "url(#linearGradient-1)",
               xlinkHref: "#path-2",
             })
           )
@@ -54014,9 +54004,9 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
           "0 1px 4px 1px $shadow8, 0 0 0 1px $shadow4, 0 2px 4px -3px $shadow12, 0 5px 8px -8px $shadow12",
       },
       [`
-      &:hover ${mu.Frame},
-      &:active ${mu.Frame}
-    `]: { color: "rgba(0,0,0,0.8)" },
+        &:hover ${mu.Frame},
+        &:active ${mu.Frame}
+      `]: { color: "rgba(0,0,0,0.8)" },
       variants: {
         visible: {
           true: { opacity: 1, pointerEvents: "auto" },
@@ -55472,14 +55462,14 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
         .map(bA())
         .join(
           `
-`
+  `
         )
         .replace(
           /\n{3,}/g,
           (t) => `
-${"<br/>".repeat(t.length - 2)}
-
-`
+  ${"<br/>".repeat(t.length - 2)}
+  
+  `
         ),
     sI = -1,
     aE = 0,
@@ -64839,7 +64829,7 @@ ${"<br/>".repeat(t.length - 2)}
     zee = /^[;\s]*/,
     Vee = /^\s+|\s+$/g,
     Yee = `
-`,
+  `,
     PL = "/",
     UL = "*",
     Uh = "",
@@ -68117,12 +68107,12 @@ ${"<br/>".repeat(t.length - 2)}
           }
           case -4: {
             h = `
-`;
+  `;
             break;
           }
           case -3: {
             h = `\r
-`;
+  `;
             break;
           }
           case -2: {
@@ -68948,7 +68938,7 @@ ${"<br/>".repeat(t.length - 2)}
         {
           type: "text",
           value: `
-`,
+  `,
         },
       ]
     );
@@ -68957,7 +68947,7 @@ ${"<br/>".repeat(t.length - 2)}
     const n = t.value
         ? t.value +
           `
-`
+  `
         : "",
       i = {};
     t.lang && (i.className = ["language-" + t.lang]);
@@ -69153,7 +69143,7 @@ ${"<br/>".repeat(t.length - 2)}
         h.push({
           type: "text",
           value: `
-`,
+  `,
         }),
         S.type === "element" && S.tagName === "p" && !l
           ? h.push(...S.children)
@@ -69165,7 +69155,7 @@ ${"<br/>".repeat(t.length - 2)}
       h.push({
         type: "text",
         value: `
-`,
+  `,
       });
     const E = { type: "element", tagName: "li", properties: c, children: h };
     return e.patch(t, E), e.applyData(t, E);
@@ -69474,7 +69464,7 @@ ${"<br/>".repeat(t.length - 2)}
           {
             type: "text",
             value: `
-`,
+  `,
           },
           {
             type: "element",
@@ -69485,7 +69475,7 @@ ${"<br/>".repeat(t.length - 2)}
           {
             type: "text",
             value: `
-`,
+  `,
           },
         ],
       };
@@ -69618,7 +69608,7 @@ ${"<br/>".repeat(t.length - 2)}
       n.push({
         type: "text",
         value: `
-`,
+  `,
       });
       ++i < e.length;
 
@@ -69627,7 +69617,7 @@ ${"<br/>".repeat(t.length - 2)}
         n.push({
           type: "text",
           value: `
-`,
+  `,
         }),
         n.push(e[i]);
     return (
@@ -69636,7 +69626,7 @@ ${"<br/>".repeat(t.length - 2)}
         n.push({
           type: "text",
           value: `
-`,
+  `,
         }),
       n
     );
@@ -69660,7 +69650,7 @@ ${"<br/>".repeat(t.length - 2)}
           {
             type: "text",
             value: `
-`,
+  `,
           },
           l
         ),
@@ -71356,7 +71346,7 @@ ${"<br/>".repeat(t.length - 2)}
       );
     }
     return D.join(`
-`);
+  `);
   }
   function Eie(e) {
     return e == null ? "" : String(e);
@@ -71399,12 +71389,12 @@ ${"<br/>".repeat(t.length - 2)}
       if (
         n.unsafe[l].character ===
           `
-` &&
+  ` &&
         _ie(n.stack, n.unsafe[l])
       )
         return /[ \t]/.test(i.before) ? "" : " ";
     return `\\
-`;
+  `;
   }
   function Aie(e, t) {
     const n = String(e);
@@ -71466,7 +71456,7 @@ ${"<br/>".repeat(t.length - 2)}
           n.safe(e.meta, {
             before: S,
             after: `
-`,
+  `,
             encode: ["`"],
             ...d.current(),
           })
@@ -71475,12 +71465,12 @@ ${"<br/>".repeat(t.length - 2)}
     }
     return (
       (S += d.move(`
-`)),
+  `)),
       c &&
         (S += d.move(
           c +
             `
-`
+  `
         )),
       (S += d.move(g)),
       E(),
@@ -71527,7 +71517,7 @@ ${"<br/>".repeat(t.length - 2)}
               after: e.title
                 ? " "
                 : `
-`,
+  `,
               ...g.current(),
             })
           ))),
@@ -71625,22 +71615,22 @@ ${"<br/>".repeat(t.length - 2)}
         x = n.containerPhrasing(e, {
           ...c.current(),
           before: `
-`,
+  `,
           after: `
-`,
+  `,
         });
       return (
         C(),
         S(),
         x +
           `
-` +
+  ` +
           (l === 1 ? "=" : "-").repeat(
             x.length -
               (Math.max(
                 x.lastIndexOf("\r"),
                 x.lastIndexOf(`
-`)
+  `)
               ) +
                 1)
           )
@@ -71653,7 +71643,7 @@ ${"<br/>".repeat(t.length - 2)}
     let E = n.containerPhrasing(e, {
       before: "# ",
       after: `
-`,
+  `,
       ...c.current(),
     });
     return (
@@ -72162,7 +72152,7 @@ ${"<br/>".repeat(t.length - 2)}
         { character: "\r", inConstruct: "tableCell" },
         {
           character: `
-`,
+  `,
           inConstruct: "tableCell",
         },
         { atBreak: !0, character: "|", after: "[	 :-]" },
@@ -72181,7 +72171,7 @@ ${"<br/>".repeat(t.length - 2)}
       return $.slice(
         0,
         $.indexOf(`
-`)
+  `)
       );
     }
     function g(D, L, w, H) {
@@ -73330,7 +73320,7 @@ ${"<br/>".repeat(t.length - 2)}
           {
             type: "text",
             value: `
-`,
+  `,
           },
         ],
       },
@@ -73773,15 +73763,15 @@ ${"<br/>".repeat(t.length - 2)}
       overflowX: "hidden",
       paddingBottom: "$3",
       [`
-    & ${sd.Container},
-    & ${ul.List},
-    & ${ul.Actions},
-    & ${i2.Container}
-  `]: { ...J_({ duration: 150, delay: 0 }) },
+      & ${sd.Container},
+      & ${ul.List},
+      & ${ul.Actions},
+      & ${i2.Container}
+    `]: { ...J_({ duration: 150, delay: 0 }) },
       [`
-    & > ${sd.Container},
-    & > ${ul.Container}
-  `]: { padding: "0 $5" },
+      & > ${sd.Container},
+      & > ${ul.Container}
+    `]: { padding: "0 $5" },
       [`& > ${ul.Actions}`]: { padding: "0 $5 0 54px" },
       [`& ${ul.Container}`]: {
         marginBottom: "$1",
@@ -73789,10 +73779,10 @@ ${"<br/>".repeat(t.length - 2)}
       },
       [`& ${sd.Container} + ${sd.Container}`]: { marginTop: "$1" },
       [`
-    & ${ul.Container} + ${sd.Container},
-    & ${ul.Actions} + ${sd.Container},
-    & ${sd.Container} + ${ul.Controls} + ${ul.Container}
-  `]: { marginTop: "$5" },
+      & ${ul.Container} + ${sd.Container},
+      & ${ul.Actions} + ${sd.Container},
+      & ${sd.Container} + ${ul.Controls} + ${ul.Container}
+    `]: { marginTop: "$5" },
       [`& ${wh.Container}`]: { width: 50 },
       [`& ${AC}`]: { marginTop: "$3", marginBottom: 8 },
     }),
@@ -74116,9 +74106,9 @@ ${"<br/>".repeat(t.length - 2)}
       pointerEvents: "none",
       zIndex: 1e4,
       [`
-    & > ${bg},
-    & > ${Eg}
-  `]: { position: "absolute" },
+      & > ${bg},
+      & > ${Eg}
+    `]: { position: "absolute" },
       variants: {
         withChat: {
           true: { [`& > ${Eg}`]: { ...GP }, [`& > ${bg}`]: { ...WP } },
@@ -74190,7 +74180,7 @@ ${"<br/>".repeat(t.length - 2)}
         throw (
           (console.error(
             `${t}. 
-Target:`,
+  Target:`,
             e
           ),
           new Error("Failed to attach embedded chat to the provided target."))
