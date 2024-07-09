@@ -54578,7 +54578,7 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
               ? Pe.jsx(gs, { onClick: i, children: "Start New Chat" })
               : Pe.jsx(kX, {
                   value: c,
-                  placeholder: "Messageâ€¦",
+                  placeholder: "Ask a question...",
                   autoFocus: !0,
                   onValueChange: h,
                   onSend: d,
@@ -54587,7 +54587,7 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
             e &&
               Pe.jsxs(F2, {
                 children: [
-                  "Assistant âš¡ï¸ by",
+                  "Assistant by",
                   Pe.jsx("a", {
                     target: "_blank",
                     href: "https://www.nextsolutionai.com/",
