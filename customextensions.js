@@ -576,8 +576,5 @@ export const DisableInputExtension = {
     };
 
     disableFooterInputs(isDisabled);
-    window.voiceflow.chat.interact({
-      type: "complete",
-    });
   },
 };
