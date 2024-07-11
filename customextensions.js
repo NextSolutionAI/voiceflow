@@ -542,3 +542,42 @@ export const CalendlyExtension = {
     }
   },
 };
+
+export const DisableInputExtension = {
+  name: "DisableInput",
+  type: "effect",
+  match: ({ trace }) =>
+    trace.type === "ext_disableInput" || trace.payload.name === "ext_disableInput",
+  effect: ({ trace }) => {
+    const { isDisabled } = trace.payload;
+
+    const disableFooterInputs = (isDisabled) => {
+      const chatDiv = document.getElementById("voiceflow-chat");
+      if (chatDiv) {
+        const shadowRoot = chatDiv.shadowRoot;
+        if (shadowRoot) {
+          const textareas = shadowRoot.querySelectorAll("textarea");
+          textareas.forEach((textarea) => {
+            textarea.disabled = isDisabled;
+            textarea.style.backgroundColor = isDisabled ? "#d3d3d3" : "";
+            textarea.style.opacity = isDisabled ? "0.5" : "";
+            textarea.style.pointerEvents = isDisabled ? "none" : "auto";
+          });
+
+          const buttons = shadowRoot.querySelectorAll(
+            ".c-bXTvXv.c-bXTvXv-lckiv-type-info"
+          );
+          buttons.forEach((button) => {
+            button.disabled = isDisabled;
+            button.style.pointerEvents = isDisabled ? "none" : "auto";
+          });
+        }
+      }
+    };
+
+    disableFooterInputs(isDisabled);
+    window.voiceflow.chat.interact({
+      type: "complete",
+    });
+  },
+};
