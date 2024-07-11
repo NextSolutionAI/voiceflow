@@ -54582,7 +54582,7 @@
                     target: "_blank",
                     href: "https://www.google.com/",
                     rel: "noreferrer",
-                    children: "Ebotty",
+                    children: "Botty",
                   }),
                 ],
               }),
