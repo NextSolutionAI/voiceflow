@@ -53871,7 +53871,7 @@
       ({ image: e, ...t }) => Pe.jsx(h2, { ...t, src: e || void 0 }),
       { Base: h2 }
     ),
-    m2 = 246,
+    m2 = 322,
     X0 = Yr($r.CARD),
     v2 = Ut(X0("section"), {
       display: "inline-flex",
