@@ -1,55 +1,79 @@
 const SVG_Thumb = `<svg width="24px" height="24px" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.29398 20.4966C4.56534 20.4966 4 19.8827 4 19.1539V12.3847C4 11.6559 4.56534 11.042 5.29398 11.042H8.12364L10.8534 4.92738C10.9558 4.69809 11.1677 4.54023 11.4114 4.50434L11.5175 4.49658C12.3273 4.49658 13.0978 4.85402 13.6571 5.48039C14.2015 6.09009 14.5034 6.90649 14.5034 7.7535L14.5027 8.92295L18.1434 8.92346C18.6445 8.92346 19.1173 9.13931 19.4618 9.51188L19.5612 9.62829C19.8955 10.0523 20.0479 10.6054 19.9868 11.1531L19.1398 18.742C19.0297 19.7286 18.2529 20.4966 17.2964 20.4966H8.69422H5.29398ZM11.9545 6.02658L9.41727 11.7111L9.42149 11.7693L9.42091 19.042H17.2964C17.4587 19.042 17.6222 18.8982 17.6784 18.6701L17.6942 18.5807L18.5412 10.9918C18.5604 10.8194 18.5134 10.6486 18.4189 10.5287C18.3398 10.4284 18.2401 10.378 18.1434 10.378H13.7761C13.3745 10.378 13.0488 10.0524 13.0488 9.65073V7.7535C13.0488 7.2587 12.8749 6.78825 12.5721 6.44915C12.4281 6.28794 12.2615 6.16343 12.0824 6.07923L11.9545 6.02658ZM7.96636 12.4966H5.45455V19.042H7.96636V12.4966Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M5.29398 20.4966C4.56534 20.4966 4 19.8827 4 19.1539V12.3847C4 11.6559 4.56534 11.042 5.29398 11.042H8.12364L10.8534 4.92738C10.9558 4.69809 11.1677 4.54023 11.4114 4.50434L11.5175 4.49658C12.3273 4.49658 13.0978 4.85402 13.6571 5.48039C14.2015 6.09009 14.5034 6.90649 14.5034 7.7535L14.5027 8.92295L18.1434 8.92346C18.6445 8.92346 19.1173 9.13931 19.4618 9.51188L19.5612 9.62829C19.8955 10.0523 20.0479 10.6054 19.9868 11.1531L19.1398 18.742C19.0297 19.7286 18.2529 20.4966 17.2964 20.4966H8.69422H5.29398ZM11.9545 6.02658L9.41727 11.7111L9.42149 11.7693L9.42091 19.042H17.2964C17.4587 19.042 17.6222 18.8982 17.6784 18.6701L17.6942 18.5807L18.5412 10.9918C18.5604 10.8194 18.5134 10.6486 18.4189 10.5287C18.3398 10.4284 18.2401 10.378 18.1434 10.378H13.7761C13.3745 10.378 13.0488 10.0524 13.0488 9.65073V7.7535C13.0488 7.2587 12.8749 6.78825 12.5721 6.44915C12.4281 6.28794 12.2615 6.16343 12.0824 6.07923L11.9545 6.02658ZM7.96636 12.4966H5.45455V19.042H7.96636V12.4966Z" fill="currentColor"></path></svg>`;
 
 export const FormExtension = {
-  name: "Forms",
+  name: "FormExtension",
   type: "response",
   match: ({ trace }) =>
     trace.type === "ext_form" || trace.payload.name === "ext_form",
   render: ({ trace, element }) => {
+    const disableFooterInputs = (isDisabled) => {
+      const chatDiv = document.getElementById("voiceflow-chat");
+      if (chatDiv) {
+        const shadowRoot = chatDiv.shadowRoot;
+        if (shadowRoot) {
+          const textareas = shadowRoot.querySelectorAll("textarea");
+          textareas.forEach((textarea) => {
+            textarea.disabled = isDisabled;
+            textarea.style.backgroundColor = isDisabled ? "#d3d3d3" : "";
+            textarea.style.opacity = isDisabled ? "0.5" : "";
+            textarea.style.pointerEvents = isDisabled ? "none" : "auto";
+          });
+
+          const buttons = shadowRoot.querySelectorAll(
+            ".c-bXTvXv.c-bXTvXv-lckiv-type-info"
+          );
+          buttons.forEach((button) => {
+            button.disabled = isDisabled;
+            button.style.pointerEvents = isDisabled ? "none" : "auto";
+          });
+        }
+      }
+    };
+
     const formContainer = document.createElement("form");
 
     formContainer.innerHTML = `
-          <style>
-            label {
-              font-size: 0.8em;
-              color: #888;
-            }
-            input[type="text"], input[type="email"], input[type="tel"] {
-              width: 100%;
-              border: none;
-              border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
-              background: transparent;
-              margin: 5px 0;
-              outline: none;
-            }
-            .phone {
-              width: 150px;
-            }
-            .invalid {
-              border-color: red;
-            }
-            .submit {
-              background: linear-gradient(to right, #2e6ee1, #2e7ff1 );
-              border: none;
-              color: white;
-              padding: 10px;
-              border-radius: 5px;
-              width: 100%;
-              cursor: pointer;
-            }
-          </style>
+      <style>
+        label {
+          font-size: 0.8em;
+          color: #888;
+        }
+        input[type="text"], input[type="email"], input[type="tel"] {
+          width: 100%;
+          border: none;
+          border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+          background: transparent;
+          margin: 5px 0;
+          outline: none;
+        }
+        .phone {
+          width: 150px;
+        }
+        .invalid {
+          border-color: red;
+        }
+        .submit {
+          background: linear-gradient(to right, #2e6ee1, #2e7ff1 );
+          border: none;
+          color: white;
+          padding: 10px;
+          border-radius: 5px;
+          width: 100%;
+          cursor: pointer;
+        }
+      </style>
 
-          <label for="name">Name</label>
-          <input type="text" class="name" name="name" required><br><br>
+      <label for="name">Name</label>
+      <input type="text" class="name" name="name" required><br><br>
 
-          <label for="email">Email</label>
-          <input type="email" class="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Invalid email address"><br><br>
+      <label for="email">Email</label>
+      <input type="email" class="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$" title="Invalid email address"><br><br>
 
-          <label for="phone">Phone Number</label>
-          <input type="tel" class="phone" name="phone" required pattern="\\d+" title="Invalid phone number, please enter only numbers"><br><br>
+      <label for="phone">Phone Number</label>
+      <input type="tel" class="phone" name="phone" required pattern="\\d+" title="Invalid phone number, please enter only numbers"><br><br>
 
-          <input type="submit" class="submit" value="Submit">
-        `;
+      <input type="submit" class="submit" value="Submit">
+    `;
 
     formContainer.addEventListener("submit", function (event) {
       event.preventDefault();
@@ -70,6 +94,7 @@ export const FormExtension = {
       }
 
       formContainer.querySelector(".submit").remove();
+      disableFooterInputs(false);
 
       window.voiceflow.chat.interact({
         type: "complete",
@@ -78,6 +103,8 @@ export const FormExtension = {
     });
 
     element.appendChild(formContainer);
+
+    disableFooterInputs(true);
   },
 };
 
@@ -441,10 +468,15 @@ export const FeedbackExtension = {
 
     feedbackContainer.innerHTML = `
           <style>
+            .vfrc-message--extension-Feedback {
+                background-color: #FFFFFF;
+            }
+
             .vfrc-feedback {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                background-color: #FFFFFF;
             }
 
             .vfrc-feedback--description {
@@ -479,7 +511,7 @@ export const FeedbackExtension = {
             }
 
             .vfrc-feedback--button:first-child svg {
-                fill: none; /* color for thumb up */
+                fill: gray; /* color for thumb up */
                 stroke: none;
                 border: none;
                 margin-left: 6px;
@@ -487,7 +519,7 @@ export const FeedbackExtension = {
 
             .vfrc-feedback--button:last-child svg {
                 margin-left: 4px;
-                fill: none; /* color for thumb down */
+                fill: gray; /* color for thumb down */
                 stroke: none;
                 border: none;
                 transform: rotate(180deg);
@@ -540,6 +572,194 @@ export const CalendlyExtension = {
     if (url) {
       Calendly.initPopupWidget({ url });
     }
+  },
+};
+
+export const MultiSelectExtension = {
+  name: "MultiSelect",
+  type: "response",
+  match: ({ trace }) =>
+    trace.type === "ext_multiselect" ||
+    trace.payload.name === "ext_multiselect",
+  render: ({ trace, element }) => {
+    const { options, maxSelections } = trace.payload;
+    const multiSelectContainer = document.createElement("form");
+    multiSelectContainer.classList.add("multi-select-form");
+
+    element.innerHTML = "";
+
+    multiSelectContainer.innerHTML = `
+      <style>
+        .multi-select-form {
+          display: flex;
+          flex-direction: column;
+          padding: 20px;
+          background-color: #f8f9fa;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          font-family: 'Arial', sans-serif;
+          max-width: 400px;
+          margin: 20px auto;
+        }
+        .multi-select-options {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+        }
+        .multi-select-options label {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          padding: 10px;
+          border-radius: 4px;
+          background-color: #ffffff;
+          border: 1px solid #ced4da;
+          cursor: pointer;
+          transition: background-color 0.3s, border-color 0.3s;
+        }
+        .multi-select-options input[type="checkbox"] {
+          margin-right: 10px;
+        }
+        .multi-select-options label:hover {
+          background-color: #e9ecef;
+          border-color: #adb5bd;
+        }
+        .submit, .cancel {
+          background-color: #007bff;
+          border: none;
+          color: white;
+          padding: 10px;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          margin-top: 10px;
+        }
+        .submit:disabled {
+          background-color: #6c757d;
+          cursor: not-allowed;
+        }
+        .submit:hover:not(:disabled) {
+          background-color: #0056b3;
+        }
+        .cancel {
+          background-color: #dc3545;
+        }
+        .cancel:hover {
+          background-color: #c82333;
+        }
+        .button-group {
+          display: flex;
+          justify-content: space-between;
+        }
+        .error-message {
+          color: #dc3545;
+          font-size: 0.9em;
+          margin-bottom: 10px;
+        }
+        @keyframes shake {
+          0% { transform: translateX(0); }
+          25% { transform: translateX(-5px); }
+          50% { transform: translateX(5px); }
+          75% { transform: translateX(-5px); }
+          100% { transform: translateX(0); }
+        }
+      </style>
+      <div class="multi-select-options">
+        ${options
+          .map(
+            (option) => `
+          <label>
+            <input type="checkbox" name="options" value="${option}">
+            ${option}
+          </label>
+        `
+          )
+          .join("")}
+      </div>
+      <div class="error-message" style="display: none;"></div>
+      <div class="button-group">
+        <button type="submit" class="submit" disabled>Select</button>
+        <button type="button" class="cancel">Cancel</button>
+      </div>
+    `;
+
+    const optionsContainer = multiSelectContainer.querySelector(
+      ".multi-select-options"
+    );
+    const errorMessage = multiSelectContainer.querySelector(".error-message");
+    const submitButton = multiSelectContainer.querySelector(".submit");
+    const checkboxes = optionsContainer.querySelectorAll(
+      'input[type="checkbox"]'
+    );
+
+    const updateSubmitButtonState = () => {
+      const selected = optionsContainer.querySelectorAll(
+        'input[name="options"]:checked'
+      );
+      submitButton.disabled = selected.length === 0;
+    };
+
+    const resetForm = () => {
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = false;
+      });
+      errorMessage.style.display = "none";
+      submitButton.disabled = true;
+    };
+
+    resetForm();
+
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        const selected = optionsContainer.querySelectorAll(
+          'input[name="options"]:checked'
+        );
+        if (selected.length > maxSelections) {
+          checkbox.checked = false;
+          errorMessage.style.display = "block";
+          errorMessage.textContent = `You can select up to ${maxSelections} options only.`;
+          multiSelectContainer.style.animation = "shake 0.5s";
+          setTimeout(() => {
+            multiSelectContainer.style.animation = "none";
+          }, 500);
+        } else {
+          errorMessage.style.display = "none";
+        }
+        updateSubmitButtonState();
+      });
+    });
+
+    multiSelectContainer.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const selectedOptions = optionsContainer.querySelectorAll(
+        'input[name="options"]:checked'
+      );
+      const selectedOptionsValues = Array.from(selectedOptions).map(
+        (option) => option.value
+      );
+      console.log("Selected Options on Submit:", selectedOptionsValues);
+      window.voiceflow.chat.interact({
+        type: "complete",
+        payload: {
+          options: selectedOptionsValues,
+        },
+      });
+      resetForm();
+    });
+
+    const cancelButton = multiSelectContainer.querySelector(".cancel");
+    cancelButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      resetForm();
+      window.voiceflow.chat.interact({
+        type: "cancel",
+        payload: {
+          options: 0,
+        },
+      });
+    });
+
+    element.appendChild(multiSelectContainer);
   },
 };
 
