@@ -30,6 +30,14 @@
   border: none;
 }
 
+.vfrc-header--title {
+  color: #000000fa;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
+    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
 .c-dzcdPv .vfrc-header--button {
   border: none;
   background: none;
@@ -208,18 +216,6 @@
   border-color: rgba(0, 43, 69, 0.7);
 }
 
-.vfrc-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 3px 35px rgba(83, 83, 83, 0.13);
-  display: flex;
-  flex-direction: column;
-  width: 286px;
-  padding: 20px;
-  text-align: center; 
-}
-
-
 .c-bXTvXv.c-bXTvXv-lckiv-type-info {
   background-color: #0BA9AF;
   color: #ffffff;
@@ -235,6 +231,31 @@
   color: #ffffff;
 }
 
+.c-kIbiaN-iiTsXc-size-small.c-kIbiaN-igBpvik-css {
+  display: none;
+}
+
+.vfrc-timestamp {
+  color: transparent;
+}
+
+.vfrc-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 35px rgba(83, 83, 83, 0.13);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  padding: 31px;
+  text-align: center; 
+}
+
+.c-PJLV-jJkrMz-mode-overlay {
+width: 248px;
+padding-left: 10px;
+}
+
 .vfrc-card--description {
   font-size: 14px;
   color: #000000;
@@ -242,67 +263,8 @@
   text-align: center;
 }
 
-.c-kIbiaN-iiTsXc-size-small.c-kIbiaN-igBpvik-css {
-  display: none;
-}
-
-.vfrc-timestamp {
-  color: #ffffff;
-}
-
-.vfrc-header--title {
-  color: #000000fa;
-  font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
-}
-
 @media screen and (min-width: 768px) {
   .vfrc-widget--chat {
-    max-height: 725px !important;
-    width: 375px !important;
     border-radius: 20px;
-  }
-}
-
-@media (max-width: 767.98px) and (min-width: 576px) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0px !important;
-  }
-  .c-kIbiaN-iiTsXc-size-small {
-    display: none !important;
-  }
-  .vfrc-system-response--actions {
-    padding-left: 17px !important;
-  }
-  .vfrc-card {
-    padding: 31px;
-}
-}
-
-@media (max-width: 575.98px) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0px !important;
-  }
-  .c-kIbiaN-iiTsXc-size-small {
-    display: none !important;
-  }
-  .vfrc-system-response--actions {
-    padding-left: 17px !important;
-  }
-  .vfrc-prompt,
-  .vfrc-footer {
-    border-top-left-radius: 0%;
-    border-top-right-radius: 0%;
-    border-bottom-left-radius: 0%;
-    border-bottom-right-radius: 0%;
-  }
-  .vfrc-card {
-    padding: 31px;
   }
 }
