@@ -223,38 +223,3 @@
     border-radius: 20px;
   }
 }
-
-@media (max-width: 767.98px) and (min-width: 576px) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0px !important;
-  }
-  .c-kIbiaN-iiTsXc-size-small {
-    display: none !important;
-  }
-  .vfrc-system-response--actions {
-    padding-left: 17px !important;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .vfrc-widget--chat {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0px !important;
-  }
-  .c-kIbiaN-iiTsXc-size-small {
-    display: none !important;
-  }
-  .vfrc-system-response--actions {
-    padding-left: 17px !important;
-  }
-  .vfrc-prompt,
-  .vfrc-footer {
-    border-top-left-radius: 0%;
-    border-top-right-radius: 0%;
-    border-bottom-left-radius: 0%;
-    border-bottom-right-radius: 0%;
-  }
-}
