@@ -218,8 +218,6 @@
 
 @media screen and (min-width: 768px) {
   .vfrc-widget--chat {
-    max-height: 725px !important;
-    width: 375px !important;
     border-radius: 20px;
   }
 }
