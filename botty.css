@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+
+#voiceflow-chat, #flat-chat, #voiceflow-chat-frame {
+    font-family: 'Space Grotesk', sans-serif !important;
+}
+
 .voiceflow-chat {
   box-shadow: #000000;
 }
