@@ -1,28 +1,13 @@
 .voiceflow-chat {
   box-shadow: #000000;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .vfrc-widget--chat {
   animation: fadeInChat 1s ease-out;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .vfrc-assistant-info--title {
   font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
-}
-
-.vfrc-assistant-info--description {
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .vfrc-header {
@@ -33,9 +18,6 @@
 .vfrc-header--title {
   color: #000000fa;
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .c-dzcdPv .vfrc-header--button {
@@ -74,12 +56,6 @@
   animation: 400ms ease-out 150ms 1 normal forwards running cxARAE;
 }
 
-.c-cNrVYs .c-fYYkXN {
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
-}
-
 .c-fYYkXN {
   border-top-left-radius: 100px !important;
   border-bottom-left-radius: 100px !important;
@@ -97,8 +73,8 @@
   min-width: 95px;
   height: 44px;
   border-radius: 42px;
-  border: 1px solid #6F9EA4;
-  background-color: #75A7AD;
+  border: 1px solid #f56b8e;
+  background-color: #EE1D52;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,18 +99,11 @@
 }
 
 .vfrc-launcher:hover {
-  background-color: #75A7AD;
+  background-color: #EE1D52;
 }
 
 .c-bXTvXv-lckiv-type-info {
   background-color: #002b45;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
-}
-
-.c-bXTvXv-lckiv-type-info:hover {
-  background-color: #014a77;
 }
 
 .c-bXTvXv-igaDqE-type-subtle {
@@ -154,9 +123,6 @@
   background-color: transparent;
   color: rgba(0, 0, 0, 0.85);
   transition: all 333ms ease-in-out 0s;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .c-bQoszf > img {
@@ -166,9 +132,6 @@
 .vfrc-message {
   border-radius: 20px;
   font-weight: normal;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .c-PJLV-jueArD-from-system {
@@ -191,7 +154,7 @@
 
 .vfrc-button--secondary {
   display: inline-block;
-  border: 1px solid rgba(0, 43, 69, 0.45);
+  border: 1px solid #f1537a;
   font-size: 16px;
   font-weight: 500;
   border-radius: 20px;
@@ -199,16 +162,13 @@
   margin: 0px;
   box-sizing: border-box;
   background-color: transparent;
-  color: #002b45;
+  color: #EE1D52;
   cursor: pointer;
   transition: background-color 50ms ease-in-out 0s,
     border-color 100ms ease-in-out 0s;
   white-space: normal;
   text-align: left;
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .vfrc-button--secondary:hover {
@@ -217,17 +177,16 @@
 }
 
 .c-bXTvXv.c-bXTvXv-lckiv-type-info {
-  background-color: #0BA9AF;
+  background-color: #EE1D52;
   color: #ffffff;
   margin-bottom: 8px;
   width: 100%;
   font-size: 12px;
   box-sizing: border-box;
-  font-family: Poppins,sans-serif;
 }
 
 .c-bXTvXv.c-bXTvXv-lckiv-type-info:hover {
-  background-color: #0a8e92;
+  background-color: #ee4f77;
   color: #ffffff;
 }
 
@@ -259,7 +218,6 @@ padding-left: 10px;
 .vfrc-card--description {
   font-size: 14px;
   color: #000000;
-  font-family: poppins;
   text-align: center;
 }
 
