@@ -798,3 +798,47 @@ export const DisableInputExtension = {
     disableFooterInputs(isDisabled);
   },
 };
+
+export const CustomImageExtension = {
+  name: "CustomImage",
+  type: "response",
+  match: ({ trace }) =>
+    trace.type === "ext_custom_image" || trace.payload.name === "ext_custom_image",
+  render: ({ trace, element }) => {
+    const { imgURL } = trace.payload;
+
+    const style = document.createElement("style");
+    style.textContent = `
+      .vfrc-message--extension-CustomImage {
+        background-color: #ffffff !important;
+      }
+      .custom-image-container {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+      }
+      .custom-image-container img {
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin-left: -10px; /* Adjust this value to move the image left */
+        margin-top: 10px; /* Adjust this value to move the image down */
+        border-radius: 20px; /* Apply border radius */
+      }
+    `;
+
+    const div = document.createElement("div");
+    div.className = "custom-image-container";
+
+    const img = document.createElement("img");
+    img.src = imgURL;
+    img.alt = "BOTTY";
+
+    div.appendChild(img);
+    element.appendChild(style);
+    element.appendChild(div);
+  },
+};
