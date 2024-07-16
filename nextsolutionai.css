@@ -1,28 +1,13 @@
 .voiceflow-chat {
   box-shadow: #000000;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .vfrc-widget--chat {
   animation: fadeInChat 1s ease-out;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .vfrc-assistant-info--title {
   font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
-}
-
-.vfrc-assistant-info--description {
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .vfrc-header {
@@ -66,31 +51,18 @@
   animation: 400ms ease-out 150ms 1 normal forwards running cxARAE;
 }
 
-.c-cNrVYs .c-fYYkXN {
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
-}
-
 .c-fYYkXN {
   border-top-left-radius: 100px !important;
   border-bottom-left-radius: 100px !important;
   border: 1px solid #ccc;
 }
 
-.vfrc-chat-input--button {
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 100px;
-  border: 1px solid #ccc;
-  margin-left: -1px;
-}
-
 .vfrc-launcher {
   min-width: 95px;
   height: 44px;
   border-radius: 42px;
-  border: 1px solid rgb(255, 255, 255);
-  background-color: #ffffff;
+  border: 1px solid rgb(73, 73, 248);
+  background-color: #6134f3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,15 +86,28 @@
   content: "Chat";
 }
 
+.c-kIbiaN-iiTsXc-size-small.c-kIbiaN-icyFRzP-css {
+  width: 35px;
+  height: 35px;
+  background-image: url("https://www.nextsolutionai.com/wp-content/uploads/2024/05/ezgif.com-rotate-1.gif");
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.c-kIbiaN-eyfkxi-size-large {
+  background-image: url("https://www.nextsolutionai.com/wp-content/uploads/2024/05/ezgif.com-animated-gif-maker-1.gif");
+}
+
+.vfrc-button--secondary {
+  margin-left: 10px !important;
+}
+
 .vfrc-launcher:hover {
-  background-color: #ffffff;
+  background-color: #6134f3;
 }
 
 .c-bXTvXv-lckiv-type-info {
   background-color: #002b45;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .c-bXTvXv-lckiv-type-info:hover {
@@ -146,21 +131,28 @@
   background-color: transparent;
   color: rgba(0, 0, 0, 0.85);
   transition: all 333ms ease-in-out 0s;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .c-bQoszf > img {
   display: none;
 }
 
+.c-fYYkXN {
+  border-top-left-radius: 100px !important;
+  border-bottom-left-radius: 100px !important;
+  border: 1px solid #ccc;
+}
+
+.vfrc-chat-input--button {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border: 1px solid #ccc;
+  margin-left: -1px;
+}
+
 .vfrc-message {
   border-radius: 20px;
   font-weight: normal;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 .c-PJLV-jueArD-from-system {
@@ -169,7 +161,7 @@
 }
 
 .c-PJLV-gJqBfM-from-user {
-  background-color: rgb(0, 0, 0);
+  background-color: #5525F1;
   color: rgb(255, 255, 255);
 }
 
@@ -190,30 +182,23 @@
   padding: 9px 13px;
   margin: 0px;
   box-sizing: border-box;
-  background-color: transparent;
-  color: #002b45;
+  background-color: #ebe6ff;
+  color: #0c0033;
   cursor: pointer;
   transition: background-color 50ms ease-in-out 0s,
     border-color 100ms ease-in-out 0s;
   white-space: normal;
   text-align: left;
-  font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
+  font-size: 15px;
 }
 
 .vfrc-button--secondary:hover {
-  background-color: rgba(0, 43, 69, 0.1);
-  border-color: rgba(0, 43, 69, 0.7);
+  border-color: #4c00ff !important;
 }
 
 .vfrc-header--title {
   color: #000000fa;
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji",
-    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial,
-    sans-serif;
 }
 
 @media screen and (min-width: 768px) {
