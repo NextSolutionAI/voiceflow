@@ -20,6 +20,10 @@
   font-size: 16px;
 }
 
+.vfrc-typing-indicator {
+  display: none;
+}
+
 .c-dzcdPv .vfrc-header--button {
   border: none;
   background: none;
