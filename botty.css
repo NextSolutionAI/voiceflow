@@ -69,35 +69,29 @@
   margin-left: -1px;
 }
 
-.vfrc-launcher {
-  min-width: 95px;
-  height: 44px;
-  border-radius: 42px;
-  border: 1px solid #f56b8e;
-  background-color: #EE1D52;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 700;
-  color: #ffffff;
-  padding: 0 13px;
-  position: relative;
+.vfrc-widget--launcher {
+  background-color: transparent;
 }
-.vfrc-launcher::before {
-  content: "";
-  width: 22px;
-  height: 22px;
-  background-size: cover;
-  margin-right: 0px;
+
+.vfrc-widget--launcher {
+  background: transparent;
+  box-shadow: none;
+  border: none;
 }
-.vfrc-launcher::after {
-  content: "Chat";
-  font-family: "Space Grotesk";
+
+.vfrc-launcher.c-bQoszf {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.vfrc-launcher img {
+  width: 72px;
+  height: 72px;
 }
 
 .vfrc-launcher:hover {
-  background-color: #EE1D52;
+  background-color: none;
 }
 
 .c-bXTvXv-lckiv-type-info {
