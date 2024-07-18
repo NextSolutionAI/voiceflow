@@ -70,15 +70,15 @@
 }
 
 .vfrc-launcher {
-  min-width: 120px; /* Increased from 95px */
-  height: 60px; /* Increased from 44px */
+  width: 110px; /* Increased from 95px */
+  height: 50px; /* Increased from 44px */
   border-radius: 42px;
   border: 1px solid #f56b8e;
   background-color: #EE1D52;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px; /* Increased from 16px */
+  font-size: 18px; /* Increased from 16px */
   font-weight: 700;
   color: #ffffff;
   padding: 0 16px; /* Increased from 13px */
@@ -87,11 +87,13 @@
 
 .vfrc-launcher::before {
   content: "";
-  width: 28px; /* Increased from 22px */
-  height: 28px; /* Increased from 22px */
-  background-image: url("https://svgshare.com/i/17ua.svg");
   background-size: cover;
-  margin-right: 10px; /* Increased from 8px */
+}
+
+.c-bQoszf > img {
+  margin-right: 3px; 
+  width: 32px;
+  height: 32px;
 }
 
 .vfrc-launcher::after {
@@ -124,10 +126,6 @@
   background-color: transparent;
   color: rgba(0, 0, 0, 0.85);
   transition: all 333ms ease-in-out 0s;
-}
-
-.c-bQoszf > img {
-  display: none;
 }
 
 .vfrc-message {
