@@ -80,7 +80,7 @@
   justify-content: center;
   font-size: 16px;
   font-weight: 700;
-  color: #000;
+  color: #ffffff;
   padding: 0 13px;
   position: relative;
 }
@@ -88,17 +88,12 @@
   content: "";
   width: 22px;
   height: 22px;
-  background-image: url("https://svgshare.com/i/17ua.svg");
   background-size: cover;
-  margin-right: 8px;
+  margin-right: 0px;
 }
 .vfrc-launcher::after {
   content: "Chat";
   font-family: "Space Grotesk";
-}
-
-.c-bQoszf > img {
-  display: none;
 }
 
 .vfrc-launcher:hover {
