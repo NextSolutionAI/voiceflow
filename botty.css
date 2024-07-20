@@ -20,10 +20,6 @@
   font-size: 16px;
 }
 
-.vfrc-typing-indicator {
-  display: none;
-}
-
 .c-dzcdPv .vfrc-header--button {
   border: none;
   background: none;
@@ -73,29 +69,43 @@
   margin-left: -1px;
 }
 
-.vfrc-widget--launcher {
-  background-color: transparent;
+.vfrc-launcher {
+  width: 110px; /* Increased from 95px */
+  height: 50px; /* Increased from 44px */
+  border-radius: 42px;
+  background-color: #EE1D52;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px; /* Increased from 16px */
+  font-weight: 700;
+  color: #ffffff;
+  padding: 0 16px; /* Increased from 13px */
+  position: relative;
 }
 
-.vfrc-widget--launcher {
-  background: transparent;
-  box-shadow: none;
-  border: none;
+.vfrc-launcher::before {
+  content: "";
+  background-size: cover;
 }
 
-.vfrc-launcher.c-bQoszf {
-  background: transparent;
-  border: none;
-  box-shadow: none;
+.c-bQoszf > img {
+  margin-right: 5px; 
+  width: 32px;
+  height: 32px;
 }
 
-.vfrc-launcher img {
-  width: 72px;
-  height: 72px;
+.vfrc-launcher::after {
+  content: "Chat";
+  font-family: "Space Grotesk";
 }
 
 .vfrc-launcher:hover {
-  background-color: none;
+  background-color: #EE1D52;
+}
+
+.vfrc-typing-indicator {
+  display: none;
 }
 
 .c-bXTvXv-lckiv-type-info {
