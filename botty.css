@@ -97,7 +97,7 @@
 
 .vfrc-launcher::after {
   content: "Chat";
-  font-family: "Space Grotesk";
+  font-family: 'Inter', sans-serif;
 }
 
 .vfrc-launcher:hover {
