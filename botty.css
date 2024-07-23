@@ -32,7 +32,8 @@
   transition: all 100ms ease 0s;
 }
 
-.c-dhzjXW {
+.vfrc-header--button:nth-of-type(1) .vfrc-icon,
+.vfrc-header--button:nth-of-type(2) .vfrc-icon {
   width: 24px !important;
   height: 24px !important;
   display: inline-block;
@@ -70,38 +71,12 @@
 }
 
 .vfrc-launcher {
-  width: 110px; /* Increased from 95px */
-  height: 50px; /* Increased from 44px */
-  border-radius: 42px;
-  background-color: #EE1D52;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px; /* Increased from 16px */
-  font-weight: 700;
-  color: #ffffff;
-  padding: 0 16px; /* Increased from 13px */
-  position: relative;
-}
-
-.vfrc-launcher::before {
-  content: "";
-  background-size: cover;
+  background: #EE1D52;
 }
 
 .c-bQoszf > img {
-  margin-right: 5px; 
-  width: 32px;
-  height: 32px;
-}
-
-.vfrc-launcher::after {
-  content: "Chat";
-  font-family: 'Inter', sans-serif;
-}
-
-.vfrc-launcher:hover {
-  background-color: #EE1D52;
+  width: 70px;
+  height: 70px;
 }
 
 .vfrc-typing-indicator {
