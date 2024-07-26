@@ -15,6 +15,10 @@
   border: none;
 }
 
+.vfrc-card--header {
+  font-weight: 700;
+}
+
 .vfrc-header--title {
   color: #000000fa;
   font-size: 16px;
