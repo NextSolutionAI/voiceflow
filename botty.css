@@ -87,10 +87,6 @@
   display: none;
 }
 
-.c-bXTvXv-lckiv-type-info {
-  background-color: #002b45;
-}
-
 .c-bXTvXv-igaDqE-type-subtle {
   margin: 0px;
   border: 1px solid transparent;
@@ -158,7 +154,7 @@
 }
 
 .c-bXTvXv.c-bXTvXv-lckiv-type-info {
-  background-color: #000000;
+  background-color: #333333;
   color: #ffffff;
   margin-bottom: 8px;
   width: 100%;
