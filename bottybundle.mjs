@@ -52939,7 +52939,7 @@
       ...F3,
     },
     kK =
-      "-apple-system, BlinkMacSystemFont, 'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', Roboto, Helvetica, Arial, sans-serif",
+      "'Nunito', sans-serif",
     $3 = { 1: "13px", 2: "16px", 3: "18px" },
     H3 = { 1: 400, 2: 600 },
     j3 = { 1: "20px", 2: "22px", 3: "24px" },
