@@ -579,7 +579,8 @@ export const MultiSelectExtension = {
   name: "MultiSelect",
   type: "response",
   match: ({ trace }) =>
-    trace.type === "ext_multiselect" || trace.payload.name === "ext_multiselect",
+    trace.type === "ext_multiselect" ||
+    trace.payload.name === "ext_multiselect",
   render: ({ trace, element }) => {
     const { options, maxSelections } = trace.payload;
     const multiSelectContainer = document.createElement("form");
@@ -682,13 +683,19 @@ export const MultiSelectExtension = {
       </div>
     `;
 
-    const optionsContainer = multiSelectContainer.querySelector(".multi-select-options");
+    const optionsContainer = multiSelectContainer.querySelector(
+      ".multi-select-options"
+    );
     const errorMessage = multiSelectContainer.querySelector(".error-message");
     const submitButton = multiSelectContainer.querySelector(".submit");
-    const checkboxes = optionsContainer.querySelectorAll('input[type="checkbox"]');
+    const checkboxes = optionsContainer.querySelectorAll(
+      'input[type="checkbox"]'
+    );
 
     const updateSubmitButtonState = () => {
-      const selected = optionsContainer.querySelectorAll('input[name="options"]:checked');
+      const selected = optionsContainer.querySelectorAll(
+        'input[name="options"]:checked'
+      );
       submitButton.disabled = selected.length === 0;
     };
 
@@ -704,7 +711,9 @@ export const MultiSelectExtension = {
 
     checkboxes.forEach((checkbox) => {
       checkbox.addEventListener("change", () => {
-        const selected = optionsContainer.querySelectorAll('input[name="options"]:checked');
+        const selected = optionsContainer.querySelectorAll(
+          'input[name="options"]:checked'
+        );
         if (selected.length > maxSelections) {
           checkbox.checked = false;
           errorMessage.style.display = "block";
@@ -722,8 +731,12 @@ export const MultiSelectExtension = {
 
     multiSelectContainer.addEventListener("submit", function (event) {
       event.preventDefault();
-      const selectedOptions = optionsContainer.querySelectorAll('input[name="options"]:checked');
-      const selectedOptionsValues = Array.from(selectedOptions).map((option) => option.value);
+      const selectedOptions = optionsContainer.querySelectorAll(
+        'input[name="options"]:checked'
+      );
+      const selectedOptionsValues = Array.from(selectedOptions).map(
+        (option) => option.value
+      );
       window.voiceflow.chat.interact({
         type: "complete",
         payload: {
@@ -789,11 +802,13 @@ export const DisableInputExtension = {
 export const BrowserDataExtension = {
   name: "BrowserData",
   type: "effect",
-  match: ({ trace }) => trace.type === "ext_browserData" || trace.payload.name === "ext_browserData",
+  match: ({ trace }) =>
+    trace.type === "ext_browserData" ||
+    trace.payload.name === "ext_browserData",
   effect: async ({ trace }) => {
     const getCookies = () => {
-      const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-        const [name, value] = cookie.split('=').map(c => c.trim());
+      const cookies = document.cookie.split(";").reduce((acc, cookie) => {
+        const [name, value] = cookie.split("=").map((c) => c.trim());
         acc[name] = value;
         return acc;
       }, {});
@@ -823,14 +838,20 @@ export const BrowserDataExtension = {
     };
 
     const getViewportSize = () => {
-      const width = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-      const height = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+      const width = Math.max(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0
+      );
+      const height = Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0
+      );
       return { width, height };
     };
 
     const getIpAddress = async () => {
       try {
-        const response = await fetch('https://api.ipify.org?format=json');
+        const response = await fetch("https://api.ipify.org?format=json");
         const data = await response.json();
         return data.ip;
       } catch (error) {
@@ -840,7 +861,7 @@ export const BrowserDataExtension = {
 
     const ip = await getIpAddress();
     const url = window.location.href;
-    const params = JSON.stringify(Object.fromEntries(new URLSearchParams(window.location.search).entries()));
+    const params = new URLSearchParams(window.location.search).toString();
     const cookies = getCookies();
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const time = new Date().toLocaleTimeString();
@@ -871,17 +892,18 @@ export const BrowserDataExtension = {
         supportsCookies,
         platform,
         screenResolution: `${screenWidth}x${screenHeight}`,
-        viewportSize: `${viewportWidth}x${viewportHeight}`
-      }
+        viewportSize: `${viewportWidth}x${viewportHeight}`,
+      },
     });
-  }
+  },
 };
 
 export const CustomImageExtension = {
   name: "CustomImage",
   type: "response",
   match: ({ trace }) =>
-    trace.type === "ext_custom_image" || trace.payload.name === "ext_custom_image",
+    trace.type === "ext_custom_image" ||
+    trace.payload.name === "ext_custom_image",
   render: ({ trace, element }) => {
     const { imgURL } = trace.payload;
 
@@ -924,7 +946,9 @@ export const CustomImageExtension = {
 export const RankOptionsExtension = {
   name: "RankOptions",
   type: "response",
-  match: ({ trace }) => trace.type === "ext_rankoptions" || trace.payload.name === "ext_rankoptions",
+  match: ({ trace }) =>
+    trace.type === "ext_rankoptions" ||
+    trace.payload.name === "ext_rankoptions",
   render: ({ trace, element }) => {
     const { options } = trace.payload;
 
@@ -979,19 +1003,24 @@ export const RankOptionsExtension = {
         </style>
         <h3>Drag and drop to rank options</h3>
         <ul class="rank-options-list">
-          ${options.map(option => `
+          ${options
+            .map(
+              (option) => `
             <li data-value="${option}">
               <span>${option}</span>
             </li>
-          `).join('')}
+          `
+            )
+            .join("")}
         </ul>
         <button type="submit" class="submit-button">Submit</button>
       `;
 
       formContainer.addEventListener("submit", function (event) {
         event.preventDefault();
-        const rankedOptions = Array.from(formContainer.querySelectorAll('.rank-options-list li'))
-          .map(li => li.dataset.value);
+        const rankedOptions = Array.from(
+          formContainer.querySelectorAll(".rank-options-list li")
+        ).map((li) => li.dataset.value);
         window.voiceflow.chat.interact({
           type: "complete",
           payload: { rankedOptions },
@@ -1004,18 +1033,19 @@ export const RankOptionsExtension = {
     };
 
     function initializeSortable() {
-      const rankOptionsList = element.querySelector('.rank-options-list');
+      const rankOptionsList = element.querySelector(".rank-options-list");
       if (rankOptionsList) {
         new Sortable(rankOptionsList, {
           animation: 150,
-          onEnd: () => {}
+          onEnd: () => {},
         });
       }
     }
 
-    if (typeof Sortable === 'undefined') {
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js';
+    if (typeof Sortable === "undefined") {
+      const script = document.createElement("script");
+      script.src =
+        "https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js";
       script.onload = () => {
         createForm();
       };
@@ -1025,4 +1055,569 @@ export const RankOptionsExtension = {
       createForm();
     }
   },
+};
+
+export const DropdownExtension = {
+  name: "DropdownExtension",
+  type: "response",
+  match: ({ trace }) =>
+    trace.type === "ext_dropdown" || trace.payload.name === "ext_dropdown",
+  render: ({ trace, element }) => {
+    const disableFooterInputs = (isDisabled) => {
+      const chatDiv = document.getElementById("voiceflow-chat");
+      if (chatDiv) {
+        const shadowRoot = chatDiv.shadowRoot;
+        if (shadowRoot) {
+          const textareas = shadowRoot.querySelectorAll("textarea");
+          textareas.forEach((textarea) => {
+            textarea.disabled = isDisabled;
+            textarea.style.backgroundColor = isDisabled ? "#d3d3d3" : "";
+            textarea.style.opacity = isDisabled ? "0.5" : "";
+            textarea.style.pointerEvents = isDisabled ? "none" : "auto";
+          });
+
+          const buttons = shadowRoot.querySelectorAll(
+            ".c-bXTvXv.c-bXTvXv-lckiv-type-info"
+          );
+          buttons.forEach((button) => {
+            button.disabled = isDisabled;
+            button.style.pointerEvents = isDisabled ? "none" : "auto";
+          });
+        }
+      }
+    };
+
+    const formContainer = document.createElement("form");
+
+    const dropdownOptions = trace.payload.options || [];
+
+    formContainer.innerHTML = `
+      <style>
+        label {
+          font-size: 0.8em;
+          color: #888;
+        }
+        input[type="text"], select {
+          width: 100%;
+          border: none;
+          border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+          background: transparent;
+          margin: 5px 0;
+          outline: none;
+        }
+        .invalid {
+          border-color: red;
+        }
+        .submit {
+          background: linear-gradient(to right, #2e6ee1, #2e7ff1 );
+          border: none;
+          color: white;
+          padding: 10px;
+          border-radius: 5px;
+          width: 100%;
+          cursor: pointer;
+          opacity: 0.5;
+          pointer-events: none;
+        }
+        .submit.enabled {
+          opacity: 1;
+          pointer-events: auto;
+        }
+        .dropdown-container {
+          position: relative;
+        }
+        .dropdown-options {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          max-height: 150px;
+          overflow-y: auto;
+          background: white;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          z-index: 999;
+          display: none;
+        }
+        .dropdown-options div {
+          padding: 10px;
+          cursor: pointer;
+        }
+        .dropdown-options div:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      </style>
+
+      <label for="dropdown">Select an option</label>
+      <div class="dropdown-container">
+        <input type="text" class="dropdown-search" placeholder="Search..." autocomplete="off">
+        <div class="dropdown-options">
+          ${dropdownOptions
+            .map((option) => `<div data-value="${option}">${option}</div>`)
+            .join("")}
+        </div>
+        <input type="hidden" class="dropdown" name="dropdown" required>
+      </div><br><br>
+
+      <input type="submit" class="submit" value="Submit">
+    `;
+
+    const dropdownSearch = formContainer.querySelector(".dropdown-search");
+    const dropdownOptionsDiv = formContainer.querySelector(".dropdown-options");
+    const hiddenDropdownInput = formContainer.querySelector(".dropdown");
+    const submitButton = formContainer.querySelector(".submit");
+
+    const enableSubmitButton = () => {
+      const isValidOption = dropdownOptions.includes(hiddenDropdownInput.value);
+      if (isValidOption) {
+        submitButton.classList.add("enabled");
+      } else {
+        submitButton.classList.remove("enabled");
+      }
+    };
+
+    dropdownSearch.addEventListener("click", function () {
+      dropdownOptionsDiv.style.display =
+        dropdownOptionsDiv.style.display === "block" ? "none" : "block";
+    });
+
+    dropdownSearch.addEventListener("input", function () {
+      const filter = dropdownSearch.value.toLowerCase();
+      const options = dropdownOptionsDiv.querySelectorAll("div");
+      options.forEach((option) => {
+        const text = option.textContent.toLowerCase();
+        option.style.display = text.includes(filter) ? "" : "none";
+      });
+      dropdownOptionsDiv.style.display = "block";
+      hiddenDropdownInput.value = "";
+      enableSubmitButton();
+    });
+
+    dropdownOptionsDiv.addEventListener("click", function (event) {
+      if (event.target.tagName === "DIV") {
+        const selectedValue = event.target.getAttribute("data-value");
+        dropdownSearch.value = selectedValue;
+        hiddenDropdownInput.value = selectedValue;
+        dropdownOptionsDiv.style.display = "none";
+        enableSubmitButton();
+      }
+    });
+
+    formContainer.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const dropdown = formContainer.querySelector(".dropdown");
+      const isValidOption = dropdownOptions.includes(hiddenDropdownInput.value);
+
+      if (!isValidOption) {
+        dropdownSearch.classList.add("invalid");
+        return;
+      }
+
+      formContainer.querySelector(".submit").remove();
+      disableFooterInputs(false);
+
+      window.voiceflow.chat.interact({
+        type: "complete",
+        payload: { dropdown: dropdown.value },
+      });
+    });
+
+    element.appendChild(formContainer);
+
+    disableFooterInputs(true);
+  },
+};
+
+export const CarouselExtension = {
+  name: "Carousel",
+  type: "response",
+  match: ({ trace }) =>
+    trace.type === "ext_carousel" || trace.payload.name === "ext_carousel",
+  render: ({ trace, element }) => {
+    console.log("trace:", trace);
+    console.log("element:", element);
+
+    const { carouselItems } = trace.payload;
+    console.log("carouselItems:", carouselItems);
+
+    if (!carouselItems || !Array.isArray(carouselItems)) {
+      console.error("Invalid carouselItems payload:", carouselItems);
+      return;
+    }
+
+    const carouselWrapper = document.createElement("div");
+    carouselWrapper.classList.add("carousel-wrapper");
+
+    const carouselContainer = document.createElement("div");
+    carouselContainer.classList.add("carousel-container");
+
+    // Ensure the container is scrollable
+    carouselContainer.style.overflowX = "auto";
+    carouselContainer.style.whiteSpace = "nowrap";
+
+    carouselItems.forEach((item) => {
+      console.log("Rendering item", item);
+
+      const cardElement = document.createElement("div");
+      cardElement.classList.add("carousel-card");
+
+      const buttonsHTML = item.buttons
+        .map((button) => {
+          return `<button data-actions='${JSON.stringify(
+            button.payload.actions
+          )}'>${button.name}</button>`;
+        })
+        .join("");
+
+      cardElement.innerHTML = `
+        <style>
+          .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+          }
+          .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px;
+            scroll-behavior: smooth;
+            white-space: nowrap;
+            width: 100%;
+          }
+          .carousel-card {
+            background-color: white;
+            border: 1px solid #f1f1f1;
+            border-radius: 8px;
+            box-shadow: 0 5px 8px -8px rgba(0, 0, 0, 0.1), 0 2px 4px -3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+            width: 268px;
+            flex-shrink: 0;
+            padding: 10px;
+            display: inline-flex;
+            flex-direction: column;
+            background-color: #f9f9f9;
+            white-space: normal;
+            position: relative;
+          }
+          .carousel-card img {
+            max-width: 100%;
+            border-radius: 8px;
+          }
+          .carousel-card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.2em;
+            color: #000;
+            word-break: break-word;
+          }
+          .carousel-card p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+            word-break: break-word;
+          }
+          .carousel-card button {
+            display: block;
+            margin: 10px auto 0;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+          }
+          .carousel-card button:hover {
+            background-color: #0056b3;
+          }
+          .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .carousel-arrow.left {
+            left: 10px;
+          }
+          .carousel-arrow.right {
+            right: 10px;
+          }
+        </style>
+        <img src="${item.imageUrl}" alt="${item.title}">
+        <h3>${item.title}</h3>
+        <p>${item.description.text}</p>
+        ${buttonsHTML}
+      `;
+
+      cardElement.querySelectorAll("button[data-actions]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const actions = JSON.parse(button.getAttribute("data-actions"));
+          console.log("Button actions:", actions);
+          actions.forEach((action) => {
+            if (action.type === "open_url") {
+              window.open(action.url, "popup", "width=600,height=600"); // Open in a popup window
+            } else {
+              window.voiceflow.chat.interact({
+                type: action.type,
+                payload: action.payload,
+              });
+            }
+          });
+        });
+      });
+
+      carouselContainer.appendChild(cardElement);
+    });
+
+    const arrowLeft = document.createElement("button");
+    arrowLeft.classList.add("carousel-arrow", "left");
+    arrowLeft.innerHTML = "&#9664;"; // Left arrow
+    arrowLeft.addEventListener("click", () => {
+      carouselContainer.scrollBy({ left: -278, behavior: "smooth" });
+      console.log("Left arrow clicked, scrolling left");
+    });
+
+    const arrowRight = document.createElement("button");
+    arrowRight.classList.add("carousel-arrow", "right");
+    arrowRight.innerHTML = "&#9654;"; // Right arrow
+    arrowRight.addEventListener("click", () => {
+      carouselContainer.scrollBy({ left: 278, behavior: "smooth" });
+      console.log("Right arrow clicked, scrolling right");
+    });
+
+    carouselWrapper.appendChild(arrowLeft);
+    carouselWrapper.appendChild(carouselContainer);
+    carouselWrapper.appendChild(arrowRight);
+    element.appendChild(carouselWrapper);
+
+    console.log("Carousel rendered with arrows initialized");
+  },
+};
+
+export const CustomScreenExtension = {
+  name: "CustomScreen",
+  type: "effect",
+  match: ({ trace }) => {
+    return trace.type === "ext_customScreen" || trace.payload.name === "ext_customScreen";
+  },
+  effect: ({ trace }) => {
+    const chatDiv = document.getElementById("voiceflow-chat");
+    if (chatDiv) {
+      const shadowRoot = chatDiv.shadowRoot;
+      if (shadowRoot) {
+        const inputContainer = shadowRoot.querySelector('.vfrc-chat-input.c-cNrVYs');
+        const dialogContainer = shadowRoot.querySelector('.vfrc-chat--dialog');
+
+        if (inputContainer) {
+          const customContainer = document.createElement('div');
+          customContainer.innerHTML = `
+            <style>
+              .custom-header {
+                box-sizing: border-box;
+                box-shadow: rgba(48, 31, 6, 0.04) 0px -2px 8px;
+                opacity: 0;
+                transform: translateY(100%);
+                height: 178px;
+                transition: all 0.5s ease-out;
+                overflow: hidden;
+                border-width: 1px;
+                border-style: solid;
+                border-color: rgb(232, 232, 235);
+                border-image: initial;
+                border-radius: 16px 16px 0px 0px;
+                background: rgb(255, 255, 255);
+                padding: 20px 15px;
+                text-align: left;
+                font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial, sans-serif;
+                z-index: 100000000;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                color: rgba(0, 0, 0, 0.85);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+              }
+              .custom-header.show {
+                transform: translateY(0);
+                opacity: 1;
+              }
+              .custom-header.hide {
+                transform: translateY(100%);
+                opacity: 0;
+              }
+              .custom-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0px; /* Removed gap to place underline exactly under the button */
+              }
+              .custom-button {
+                background: none;
+                border: none;
+                width: 100%;
+                height: 100%;
+                text-align: left;
+                font-size: 16px;
+                line-height: 1.25;
+                border-radius: 8px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                color: rgba(0, 0, 0, 0.85);
+                padding: 10px 0;
+                margin: 4px 2px;
+                transition: background-color 0.3s ease;
+                font-family: 'Space Grotesk';
+              }
+              .custom-button:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+              }
+              .custom-underline {
+                width: calc(100% - 16px); 
+                height: 1px;
+                background-color: rgba(0, 0, 0, 0.1);
+                margin-left: 8px; 
+                margin-right: 8px; 
+                margin-top: -4px; 
+              }
+              .custom-button.skip {
+                margin: 0px 0 0;
+                border: 1px solid transparent;
+                font-size: 16px;
+                font-weight: 500;
+                border-radius: 8px;
+                line-height: 20px;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: transparent;
+                color: rgba(0, 0, 0, 0.85);
+                transition: none;
+              }
+            </style>
+            <div class="custom-header">
+              <div class="custom-buttons">
+                <button class="custom-button" id="email-btn" data-selection="email">Email Address</button>
+                <div class="custom-underline"></div>
+                <button class="custom-button" id="order-id-btn" data-selection="order_number">Order Number</button>
+                <div class="custom-underline"></div>
+              </div>
+              <div style="margin-top: auto;">
+                <button class="custom-button skip" id="skip-btn" data-selection="skip">Skip</button>
+              </div>
+            </div>
+          `;
+
+          inputContainer.parentNode.insertBefore(customContainer, inputContainer);
+
+          setTimeout(() => {
+            customContainer.querySelector('.custom-header').classList.add('show');
+          }, 10);
+
+          const slideDownAndRemove = () => {
+            customContainer.querySelector('.custom-header').classList.remove('show');
+            customContainer.querySelector('.custom-header').classList.add('hide');
+
+            setTimeout(() => {
+              customContainer.remove();
+            }, 500);
+          };
+
+          const handleSelection = (selection) => {
+            window.voiceflow.chat.interact({
+              type: 'selection_made',
+              payload: { selection }
+            });
+            slideDownAndRemove();
+          };
+
+          customContainer.querySelectorAll('.custom-button').forEach(button => {
+            button.addEventListener('click', () => {
+              const selection = button.getAttribute('data-selection');
+              handleSelection(selection);
+            });
+          });
+        }
+      }
+    }
+  }
+};
+
+export const SkipButtonExtension = {
+  name: "SkipButton",
+  type: "effect",
+  match: ({ trace }) => {
+    return trace.type === "ext_skipButton" || trace.payload.name === "ext_skipButton";
+  },
+  effect: ({ trace }) => {
+    const chatDiv = document.getElementById("voiceflow-chat");
+    if (chatDiv) {
+      const shadowRoot = chatDiv.shadowRoot;
+      if (shadowRoot) {
+        const footerContainer = shadowRoot.querySelector('.vfrc-footer--watermark.c-cejRVw');
+
+        if (footerContainer) {
+          const skipButtonContainer = document.createElement('div');
+          skipButtonContainer.innerHTML = `
+            <style>
+              .skip-button-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                background-color: white;
+                padding: 10px 0;
+              }
+              .skip-button {
+                margin: 0px;
+                border: 1px solid transparent;
+                font-size: 1rem;
+                font-weight: 500;
+                border-radius: 8px;
+                line-height: 20px;
+                padding: 10px 17px;
+                box-sizing: border-box;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: transparent;
+                color: rgba(0, 0, 0, 0.85);
+                transition: background-color 333ms ease-in-out, color 333ms ease-in-out;
+              }
+              .skip-button:hover {
+                background-color: rgba(46, 110, 225, 0.2);
+                color: rgba(0, 0, 0, 1);
+              }
+            </style>
+            <div class="skip-button-container">
+              <button class="skip-button" id="skip-btn">Skip</button>
+            </div>
+          `;
+
+          footerContainer.appendChild(skipButtonContainer);
+
+          const handleSkip = () => {
+            window.voiceflow.chat.interact({
+              type: 'selection_made',
+              payload: { selection: 'skip' }
+            });
+            skipButtonContainer.remove();
+          };
+
+          skipButtonContainer.querySelector('#skip-btn').addEventListener('click', handleSkip);
+        }
+      }
+    }
+  }
 };
