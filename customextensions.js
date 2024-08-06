@@ -1416,8 +1416,22 @@ export const CustomScreenExtension = {
         const inputContainer = shadowRoot.querySelector('.vfrc-chat-input.c-cNrVYs');
         const dialogContainer = shadowRoot.querySelector('.vfrc-chat--dialog');
 
-        if (inputContainer) {
+        if (inputContainer && dialogContainer) {
+          const overlay = document.createElement('div');
+          overlay.style.position = 'absolute';
+          overlay.style.top = '0';
+          overlay.style.left = '0';
+          overlay.style.width = '100%';
+          overlay.style.height = '100%';
+          overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+          overlay.style.zIndex = '2';  
+          
           const customContainer = document.createElement('div');
+          customContainer.style.position = 'absolute';
+          customContainer.style.zIndex = '3'; 
+          customContainer.style.width = '100%';
+          customContainer.style.bottom = '0';
+          
           customContainer.innerHTML = `
             <style>
               .custom-header {
@@ -1425,7 +1439,7 @@ export const CustomScreenExtension = {
                 box-shadow: rgba(48, 31, 6, 0.04) 0px -2px 8px;
                 opacity: 0;
                 transform: translateY(100%);
-                height: 178px;
+                height: 210px;
                 transition: all 0.5s ease-out;
                 overflow: hidden;
                 border-width: 1px;
@@ -1437,7 +1451,7 @@ export const CustomScreenExtension = {
                 padding: 20px 15px;
                 text-align: left;
                 font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Roboto, Helvetica, Arial, sans-serif;
-                z-index: 100000000;
+                z-index: 4; /* Ensure it is above the overlay */
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -1459,7 +1473,7 @@ export const CustomScreenExtension = {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 0px; /* Removed gap to place underline exactly under the button */
+                gap: 0px;
               }
               .custom-button {
                 background: none;
@@ -1507,6 +1521,7 @@ export const CustomScreenExtension = {
               }
             </style>
             <div class="custom-header">
+              <p style="margin-bottom: 10px;">Please choose one of the options:</p>
               <div class="custom-buttons">
                 <button class="custom-button" id="email-btn" data-selection="email">Email Address</button>
                 <div class="custom-underline"></div>
@@ -1519,7 +1534,9 @@ export const CustomScreenExtension = {
             </div>
           `;
 
-          inputContainer.parentNode.insertBefore(customContainer, inputContainer);
+          // Append overlay and custom container
+          dialogContainer.appendChild(overlay);
+          dialogContainer.appendChild(customContainer);
 
           setTimeout(() => {
             customContainer.querySelector('.custom-header').classList.add('show');
@@ -1531,6 +1548,7 @@ export const CustomScreenExtension = {
 
             setTimeout(() => {
               customContainer.remove();
+              overlay.remove();
             }, 500);
           };
 
@@ -1616,6 +1634,224 @@ export const SkipButtonExtension = {
           };
 
           skipButtonContainer.querySelector('#skip-btn').addEventListener('click', handleSkip);
+        }
+      }
+    }
+  }
+};
+
+export const SettingsScreenExtension = {
+  name: "SettingsScreen",
+  type: "effect",
+  match: ({ trace }) => trace.type === "ext_settingsScreen" || trace.payload.name === "ext_settingsScreen",
+  effect: ({ trace }) => {
+    const chatDiv = document.getElementById("voiceflow-chat");
+    if (chatDiv) {
+      const shadowRoot = chatDiv.shadowRoot;
+      if (shadowRoot) {
+        if (shadowRoot.querySelector('.kebab-menu')) {
+          return;
+        }
+
+        const header = shadowRoot.querySelector('.vfrc-header.c-iCDrnV');
+        const inputContainer = shadowRoot.querySelector('.vfrc-chat-input.c-cNrVYs');
+        const dialogContainer = shadowRoot.querySelector('.vfrc-chat--dialog');
+
+        if (header && inputContainer && dialogContainer) {
+          const kebabMenu = document.createElement('div');
+          kebabMenu.innerHTML = `
+            <style>
+              .kebab-menu {
+                position: relative;
+                cursor: pointer;
+                padding: 10px;
+                z-index: 10;
+              }
+              .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 99;  /* Ensure the overlay is behind the settings screen */
+                display: none;
+              }
+              .settings-screen {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: white;
+                display: flex;
+                flex-direction: column;
+                z-index: 100;  /* Ensure it is above the overlay */
+                padding: 0;
+                border-radius: 16px 16px 0 0;
+                box-shadow: rgba(48, 31, 6, 0.1) 0px -2px 8px;
+                transform: translateY(100%);
+                opacity: 0;
+                transition: transform 320ms cubic-bezier(0.45, 1.29, 0.64, 1), opacity 320ms ease-out;
+              }
+              .settings-screen.show {
+                transform: translateY(0);
+                opacity: 1;
+              }
+              .settings-header {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 15px;
+              }
+              .settings-title {
+                font-size: 18px;
+                font-weight: bold;
+                text-align: center;
+                margin: 0 auto;
+              }
+              .close-settings {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                margin: 6px 8px;
+                height: 32px;
+                width: 32px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+              .close-settings svg {
+                fill: #666666;
+              }
+              .settings-modal {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+              }
+              .settings-modal hr {
+                width: calc(100% - 40px);
+                margin: 0 20px;
+                border: none;
+                border-top: 1px solid #ddd;
+              }
+              .settings-modal button {
+                background: none;
+                border: none;
+                padding: 15px 20px;
+                font-size: 16px;
+                text-align: left;
+                cursor: pointer;
+                font-family: 'Space Grotesk', sans-serif;
+                display: flex;
+                align-items: center;
+              }
+              .settings-modal button .icon {
+                margin-right: 10px;
+              }
+              .settings-modal button:hover {
+                background-color: rgba(0, 0, 0, 0.05);
+              }
+              .settings-footer {
+                display: flex;
+                justify-content: center;
+                font-size: 12px;
+                color: #888;
+                padding: 10px 0;
+              }
+              .settings-footer a {
+                color: #888;
+                text-decoration: none;
+                margin: 0 5px;
+              }
+              .settings-footer a:hover {
+                text-decoration: underline;
+              }
+            </style>
+            <div class="kebab-menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12,7a2,2,0,1,0-2-2A2,2,0,0,0,12,7Zm0,10a2,2,0,1,0,2,2A2,2,0,0,0,12,17Zm0-7a2,2,0,1,0,2,2A2,2,0,0,0,12,10Z"></path>
+              </svg>
+            </div>
+            <div class="overlay"></div>
+            <div class="settings-screen">
+              <div class="settings-header">
+                <span class="settings-title">Settings</span>
+                <button class="close-settings">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13.41,12l6.3-6.29a1,1,0,1,0-1.42-1.42L12,10.59,5.71,4.29A1,1,0,0,0,4.29,5.71L10.59,12l-6.3,6.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l6.29,6.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="settings-modal">
+                <hr>
+                <button id="change-language">
+                  <span class="icon">🌐</span>Change language
+                </button>
+                <button id="email-transcript">
+                  <span class="icon">✉️</span>Email transcript
+                </button>
+                <hr>
+              </div>
+              <div class="settings-footer">
+                <a href="https://www.google.com" target="_blank">Privacy</a> • <a href="https://www.google.com" target="_blank">Terms</a>
+              </div>
+            </div>
+          `;
+
+          header.insertBefore(kebabMenu, header.firstChild);
+
+          const overlay = kebabMenu.querySelector('.overlay');
+          const settingsScreen = kebabMenu.querySelector('.settings-screen');
+          dialogContainer.appendChild(overlay); // Append the overlay to the dialog container
+          dialogContainer.appendChild(settingsScreen); // Append the settings screen to the dialog container
+
+          kebabMenu.querySelector('.kebab-menu').addEventListener('click', (event) => {
+            event.stopPropagation();
+            settingsScreen.classList.toggle('show');
+            overlay.style.display = settingsScreen.classList.contains('show') ? 'block' : 'none';
+          });
+
+          settingsScreen.querySelector('.close-settings').addEventListener('click', () => {
+            settingsScreen.classList.remove('show');
+            overlay.style.display = 'none';
+          });
+
+          settingsScreen.querySelector('#change-language').addEventListener('click', () => {
+            window.voiceflow.chat.interact({
+              type: 'change_language',
+              payload: { action: 'change_language' }
+            });
+            settingsScreen.classList.remove('show');
+            overlay.style.display = 'none';
+          });
+
+          settingsScreen.querySelector('#email-transcript').addEventListener('click', () => {
+            window.voiceflow.chat.interact({
+              type: 'email_transcript',
+              payload: { action: 'email_transcript' }
+            });
+            settingsScreen.classList.remove('show');
+            overlay.style.display = 'none';
+          });
+
+          const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+              if (mutation.addedNodes.length) {
+                mutation.addedNodes.forEach((node) => {
+                  if (node.nodeType === 1 && node.matches('.vfrc-chat.c-ealvbK.c-ealvbK-hMxnbF-withPrompt-true')) {
+                    settingsScreen.classList.remove('show');
+                    overlay.style.display = 'none';
+                  }
+                });
+              }
+            });
+          });
+
+          observer.observe(shadowRoot, { childList: true, subtree: true });
         }
       }
     }
