@@ -74060,8 +74060,8 @@
         d ? Pe.jsx(YP, { className: h }) : null
       );
     },
-    yue = 375,
-    Eue = 725,
+    yue = 348,
+    Eue = 593,
     RC = Yr($r.WIDGET),
     Eg = Ut(RC("div", "chat"), {
       width: yue,
