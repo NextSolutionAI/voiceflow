@@ -47,13 +47,13 @@
 }
 
 .c-fYYkXN {
-  border-top-left-radius: 100px !important;
-  border-bottom-left-radius: 100px !important;
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
   border: 1px solid #ccc;
 }
 .vfrc-chat-input--button {
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 100px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   border: 1px solid #ccc;
   margin-left: -1px;
 }
@@ -167,8 +167,6 @@
 
 @media screen and (min-width: 768px) {
   .vfrc-widget--chat {
-    max-height: 725px !important;
-    width: 375px !important;
     border-radius: 20px;
   }
 }
