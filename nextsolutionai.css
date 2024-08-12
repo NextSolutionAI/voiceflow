@@ -144,8 +144,8 @@
 }
 
 .vfrc-chat-input--button {
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 100px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   border: 1px solid #ccc;
   margin-left: -1px;
 }
