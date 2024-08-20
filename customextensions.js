@@ -469,7 +469,7 @@ export const FeedbackExtension = {
     feedbackContainer.innerHTML = `
           <style>
             .vfrc-message--extension-Feedback {
-                background-color: #FFFFFF;
+                background: none;
             }
 
             .vfrc-feedback {
@@ -771,17 +771,16 @@ export const DisableInputExtension = {
   effect: ({ trace }) => {
     const { isDisabled } = trace.payload;
 
-    const disableFooterInputs = (isDisabled) => {
+    const disableInputs = (isDisabled) => {
       const chatDiv = document.getElementById("voiceflow-chat");
       if (chatDiv) {
         const shadowRoot = chatDiv.shadowRoot;
         if (shadowRoot) {
-          const textareas = shadowRoot.querySelectorAll("textarea");
-          textareas.forEach((textarea) => {
-            textarea.disabled = isDisabled;
-            textarea.style.backgroundColor = isDisabled ? "#d3d3d3" : "";
-            textarea.style.opacity = isDisabled ? "0.5" : "";
-            textarea.style.pointerEvents = isDisabled ? "none" : "auto";
+          const chatInputs = shadowRoot.querySelectorAll(".vfrc-chat-input");
+          chatInputs.forEach((element) => {
+            element.disabled = isDisabled;
+            element.style.pointerEvents = isDisabled ? "none" : "auto";
+            element.style.opacity = isDisabled ? "0.5" : "";
           });
 
           const buttons = shadowRoot.querySelectorAll(
@@ -790,12 +789,13 @@ export const DisableInputExtension = {
           buttons.forEach((button) => {
             button.disabled = isDisabled;
             button.style.pointerEvents = isDisabled ? "none" : "auto";
+            button.style.opacity = isDisabled ? "0.5" : "";
           });
         }
       }
     };
 
-    disableFooterInputs(isDisabled);
+    disableInputs(isDisabled);
   },
 };
 
@@ -1855,5 +1855,127 @@ export const SettingsScreenExtension = {
         }
       }
     }
+  }
+};
+
+export const StripeBuyButtonExtension = {
+  name: "StripeBuyButton",
+  type: "response",
+  match: ({ trace }) =>
+    trace.type === "ext_stripeBuyButton" || trace.payload.name === "ext_stripeBuyButton",
+  render: ({ trace, element }) => {
+    const { publishableKey, buyButtonId, sessionId } = trace.payload;
+
+    // Log the payload values
+    console.log("Received Payload:", trace.payload);
+    console.log("Publishable Key:", publishableKey);
+    console.log("Buy Button ID:", buyButtonId);
+    console.log("Session ID:", sessionId);
+
+    if (!publishableKey || !buyButtonId || !sessionId) {
+      console.log("Error: Missing publishableKey, buyButtonId, or sessionId");
+      window.voiceflow.chat.interact({
+        type: "error",
+        payload: { message: "Missing required data for Stripe payment." },
+      });
+      return;
+    }
+
+    // Create a container for the Stripe button
+    const stripeButtonContainer = document.createElement("div");
+
+    // Append the container to the element
+    element.appendChild(stripeButtonContainer);
+
+    // Create the Stripe script
+    const script = document.createElement("script");
+    script.src = "https://js.stripe.com/v3/buy-button.js";
+    script.async = true;
+    script.onload = () => {
+      console.log("Stripe script loaded.");
+
+      // Create the Stripe Buy Button element
+      const stripeButton = document.createElement("stripe-buy-button");
+      stripeButton.setAttribute("buy-button-id", buyButtonId);
+      stripeButton.setAttribute("publishable-key", publishableKey);
+
+      // Append the Stripe Buy Button to the container
+      stripeButtonContainer.appendChild(stripeButton);
+
+      console.log("Stripe Buy Button added to the DOM.");
+    };
+
+    // Append the script to the container
+    stripeButtonContainer.appendChild(script);
+
+    // Function to monitor payment status
+    const checkPaymentStatus = async (sessionId) => {
+      try {
+        const stripe = require('stripe')(trace.payload.secretKey);
+        const session = await stripe.checkout.sessions.retrieve(sessionId);
+
+        console.log("Stripe Session Data:", session);
+
+        if (session.payment_status === 'paid') {
+          console.log("Payment Status: Paid");
+          window.voiceflow.chat.interact({
+            type: "complete",
+            payload: { status: 'paid' },
+          });
+        } else {
+          console.log("Payment Status: Not paid, polling again in 5 seconds...");
+          setTimeout(() => checkPaymentStatus(sessionId), 5000);
+        }
+      } catch (error) {
+        console.error("Error retrieving session:", error);
+      }
+    };
+
+    console.log("Checking Payment Status for Session ID:", sessionId);
+    checkPaymentStatus(sessionId);
+  },
+};
+
+export const PlaceholderExtension = {
+  name: "Placeholder",
+  type: "effect",
+  match: ({ trace }) =>
+    trace.type === "ext_placeholder" || trace.payload.name === "ext_placeholder",
+  effect: ({ trace }) => {
+    const chatDiv = document.getElementById("voiceflow-chat");
+    const shadowRoot = chatDiv.shadowRoot;
+    const textarea = shadowRoot.querySelector("textarea");
+    const button = shadowRoot.querySelector(".vfrc-chat-input--button.c-iSWgdS");
+
+    const fadeDuration = trace.payload.fadeDuration || 500;
+    const blankDuration = trace.payload.blankDuration || 1000;
+
+    const applyAnimation = (element, newPlaceholder) => {
+      element.style.transition = `opacity ${fadeDuration}ms ease`;
+      element.style.opacity = "0";
+
+      setTimeout(() => {
+        if (newPlaceholder) {
+          element.placeholder = newPlaceholder;
+        }
+        element.style.opacity = "1";
+      }, fadeDuration + blankDuration);
+    };
+
+    applyAnimation(textarea, trace.payload.placeholder);
+    applyAnimation(button);
+  },
+};
+
+export const DelayEffectExtension = {
+  name: "DelayEffect",
+  type: "effect",
+  match: ({ trace }) => trace.type === "ext_delay" || trace.payload.name === "ext_delay",
+  effect: async ({ trace }) => {
+    const { delay } = trace.payload;
+
+    await new Promise(resolve => setTimeout(resolve, delay));
+
+    window.voiceflow.chat.interact({ type: "complete" });
   }
 };
