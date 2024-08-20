@@ -59,6 +59,7 @@ body,
   color: #ffffff;
   padding: 0 13px; 
   position: relative;
+  z-index: -9999;
 }
 
 .vfrc-launcher::before {
