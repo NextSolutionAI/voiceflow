@@ -1947,8 +1947,8 @@ export const PlaceholderExtension = {
     const textarea = shadowRoot.querySelector("textarea");
     const button = shadowRoot.querySelector(".vfrc-chat-input--button.c-iSWgdS");
 
-    const fadeDuration = trace.payload.fadeDuration || 500;
-    const blankDuration = trace.payload.blankDuration || 1000;
+    const fadeDuration = trace.payload.fadeDuration;
+    const blankDuration = trace.payload.blankDuration;
 
     const applyAnimation = (element, newPlaceholder) => {
       element.style.transition = `opacity ${fadeDuration}ms ease`;
