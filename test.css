@@ -1,0 +1,210 @@
+.voiceflow-chat {
+  box-shadow: #000000;
+}
+.vfrc-widget--chat {
+  animation: fadeInChat 1s ease-out;
+}
+.vfrc-assistant-info--title {
+  font-size: 18px;
+  color: #876D45
+}
+
+.vfrc-header {
+  background-color: #111212;
+  border: none;
+}
+
+.c-dzcdPv .vfrc-header--button {
+  border: none;
+  background: none;
+  padding: 0px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  height: 32px;
+  width: 32px;
+  transition: all 100ms ease 0s;
+}
+.c-dhzjXW {
+  width: 24px !important;
+  height: 24px !important;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: #f3f3f3;
+}
+.vfrc-chat-dialog {
+  flex: 1 1 0px;
+  overflow: hidden;
+  min-height: 0px;
+  color: rgba(0, 0, 0, 0.85);
+  position: relative;
+  min-width: 320px;
+  direction: ltr;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: 400ms ease-out 150ms 1 normal forwards running cxARAE;
+}
+
+.c-fYYkXN {
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+  border: 1px solid #ccc;
+}
+.vfrc-chat-input--button {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 1px solid #ccc;
+  margin-left: -1px;
+}
+
+.vfrc-launcher {
+  width: 64px; 
+  height: 64px; 
+}
+
+.c-bXTvXv-XJvOL-type-warn {
+  background-color: black;
+}
+
+.c-bXTvXv-XJvOL-type-warn:hover {
+  background-color: #19191a;
+}
+
+.c-bXTvXv-lckiv-type-info {
+  background-color: #000000;
+}
+
+.c-bXTvXv-lckiv-type-info:hover {
+  background-color: #19191a;
+}
+
+.vfrc-chat--session-time {
+  display: none;
+}
+
+.c-bXTvXv-igaDqE-type-subtle {
+  margin: 0px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  line-height: 20px;
+  padding: 7px 17px;
+  box-sizing: border-box;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.85);
+  transition: all 333ms ease-in-out 0s;
+}
+
+.vfrc-message {
+  border-radius: 20px;
+  font-weight: normal;
+}
+.c-PJLV-jueArD-from-system {
+  background-color: #ffffff;
+  color: #000000d9;
+}
+.c-PJLV-gJqBfM-from-user {
+  background-color: #876D45;
+  color: rgb(255, 255, 255);
+}
+.vfrc-proactive-message {
+  color: rgba(255, 255, 255, 0.81) !important;
+  backdrop-filter: blur(38px) saturate(179%) !important;
+  background-color: rgba(25, 25, 25, 0.04) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+}
+.vfrc-button--secondary {
+  display: inline-block;
+  border: 1px solid rgba(0, 43, 69, 0.45);
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 9px 13px;
+  margin: 0px;
+  box-sizing: border-box;
+  background-color: transparent;
+  color: #002b45;
+  cursor: pointer;
+  transition: background-color 50ms ease-in-out 0s,
+    border-color 100ms ease-in-out 0s;
+  white-space: normal;
+  text-align: left;
+  font-size: 16px;
+}
+.vfrc-button--secondary:hover {
+  background-color: rgba(0, 43, 69, 0.1);
+  border-color: rgba(0, 43, 69, 0.7);
+}
+.vfrc-header--title {
+  color: #A48454;
+  font-size: 16px;
+}
+
+.c-kDxFae {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: var(--space-3);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #F6F3EE;
+}
+
+.vfrc-avatar {
+  border-radius: 0px;
+  border: none;
+  box-shadow: none;
+}
+
+.c-kIbiaN-eyfkxi-size-large {
+  background-color:#F6F3EE;
+}
+
+.c-kIbiaN-iiTsXc-size-small.c-kIbiaN-ieKNxfM-css {
+  background-color: #111212 ;
+}
+
+::-webkit-scrollbar {
+  width: 6px; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F6F3EE; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; 
+  border-radius: 6px;
+}
+
+.vfrc-header.c-iCDrnV {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  outline: 1px solid #111212; /* Match with your background color */
+}
+
+.vfrc-chat {
+  background-color: #00000000;
+}
+
+.vfrc-footer {
+  background-color: #ffffff;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .vfrc-widget--chat {
+    border-radius: 20px;
+  }
+}
